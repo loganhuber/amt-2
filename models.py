@@ -1,0 +1,21 @@
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class Admins(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), nullable=False)
+    pw_hash = db.Column(db.String(50), nullable=False)
+
+class Shows(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    venue = db.Column(db.String(50), nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    poster = db.Column(db.String(50), nullable=True)
+    ticket_link = db.Column(db.String(100), nullable=True)
+
+class Merch(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    image = db.Column(db.String(50), nullable=False)
+    link = db.Column(db.String(100), nullable=False)

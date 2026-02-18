@@ -1,0 +1,30 @@
+header {
+    justify-content: space-between;
+    margin-top: none;
+    width: 100vw;
+    /* background-color: black; */
+    & > * {
+        width: 33vw;
+    }
+}
+.nav-links {
+
+    justify-content: center;
+    list-style-type: none;
+
+    li {
+        margin-right: 1vw;
+        margin-left: 1vw;
+
+    }
+
+    li > a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.logo {
+    width: 20vw;
+}
+
