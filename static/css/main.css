@@ -6,6 +6,7 @@
     margin: 2rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: left;
+    
 }
 
 
@@ -62,8 +63,26 @@ form {
 a {
     text-decoration: none;
     color: inherit;
+    transition: ease-in .1s;
 }
 
+details {
+    background-color: black;
+    border: 1px solid white;
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+
+    p {
+        width: auto;
+    }
+
+    &:open {
+        summary {
+            margin-bottom: 3rem;
+        }
+    }
+}
 
 /* END BASE */
 
