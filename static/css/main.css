@@ -57,7 +57,11 @@ form {
         margin: 1rem;
         width: 100%;
     }
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -88,6 +92,20 @@ form {
     cursor: pointer;
     color: gold;
 }
+
+.hidden {
+    display: none;
+}
+
+.unstyle-button {
+    border: none;
+    background: none;
+    font-size: inherit;
+    color: white;
+    text-align: left;
+    padding: none;
+}
+
 /* END UTILITIES */
 
 @media screen and (max-width: 950px) {

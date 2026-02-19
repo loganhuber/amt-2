@@ -14,14 +14,15 @@
                 <li><a class="link-hover" href="{{ url_for('index') }}">Home</a></li>
                 <li><a class="link-hover" href="{{ url_for('music') }}">Music</a></li>
                 <li><a class="link-hover" href="{{ url_for('shows') }}">Shows</a></li>
+                <li><a class="link-hover" href="{{ url_for('merch') }}">Merch</a></li>
                 <li>
-                    <details class="flex-column" style="background-color: black;">
-                        <summary class="link-hover">More</summary>
-                        <a>Contact</a>
-                        <a>Videos</a>
-                        <a>Guitar Lessons</a>
-                        <a>Playthroughs</a>
-                    </details>
+                    <button class="link-hover unstyle-button dropdown-btn">More</button>
+                    <div class="dropdown hidden flex-column " style="background-color: black;">
+                        <a class="link-hover" href="{{ url_for('contact')}}">Contact</a>
+                        <a class="link-hover">Videos</a>
+                        <a class="link-hover">Guitar Lessons</a>
+                        <a class="link-hover">Playthroughs</a>
+                    </div>
                 </li>
                 <!-- <li><a href="contact.html">Contact</a></li> -->
             </ul>
@@ -53,4 +54,5 @@
         </ul>
     </nav>
 </footer> 
+<script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
 </html>

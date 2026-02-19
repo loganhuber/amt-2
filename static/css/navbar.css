@@ -23,6 +23,8 @@ header {
         text-decoration: none;
         color: white;
     }
+
+
 }
 
 .logo {
@@ -31,7 +33,18 @@ header {
     aspect-ratio: 1/1;
 }
 
-summary::marker {
-    content: "";
+
+.dropdown-button {
+    position: relative;
+}
+.dropdown {
+    padding: .8rem;
+    width: fit-content;
+    position: absolute;
+    align-items: flex-start;
+    
+    & > * {
+        margin: .3rem;
+    }
 }
 

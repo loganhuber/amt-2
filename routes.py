@@ -21,3 +21,7 @@ def register_routes(app):
     @app.route('/music')
     def music():
         return render_template('public/music.html')
+    
+    @app.route('/merch')
+    def merch():
+        return render_template('public/merch.html')
