@@ -16,6 +16,10 @@ body {
         background: url('../assets/indexbackground.jpeg') no-repeat center center fixed;
         background-size: cover;
     }
+    &.shows {
+        background: url('../assets/showsbackground.jpeg') no-repeat center center fixed;
+        background-size: cover;
+    }
     
 }
 .content {
@@ -53,7 +57,37 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+.link-hover:hover {
+    cursor: pointer;
+    color: gold;
+}
 /* END UTILITIES */
 
+@media screen and (max-width: 950px) {
 
+    header {
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 20vw;
+        padding: none;
+
+        li {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+        }
+    }
+
+    .nav-links.link-icons {
+        text-align: end;
+    }
+
+    .logo {
+        width: 40vw;
+    }
+}
 

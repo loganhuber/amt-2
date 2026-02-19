@@ -8,3 +8,8 @@ def register_routes(app):
     @app.route("/")
     def index():
         return render_template('index.html')
+    
+
+    @app.route('/shows')
+    def shows():
+        return render_template('shows.html')

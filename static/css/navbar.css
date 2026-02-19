@@ -12,6 +12,7 @@ header {
     justify-content: center;
     list-style-type: none;
 
+
     li {
         margin-right: 1vw;
         margin-left: 1vw;
@@ -26,5 +27,11 @@ header {
 
 .logo {
     width: 20vw;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+summary::marker {
+    content: "";
 }
 

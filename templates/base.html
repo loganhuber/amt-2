@@ -11,11 +11,11 @@
     <header class="flex-row">   
         <nav class="navbar">
             <ul class="nav-links flex-row">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="music.html">Music</a></li>
-                <li><a href="shows.html">Shows</a></li>
-                <li>
+                <li><a class="link-hover" href="{{ url_for('index') }}">Home</a></li>
+                <li><a class="link-hover" href="about.html">About</a></li>
+                <li><a class="link-hover" href="music.html">Music</a></li>
+                <li><a class="link-hover" href="{{ url_for('shows') }}">Shows</a></li>
+                <li class="link-hover">
                     <details style="background-color: black;">
                         <summary>More</summary>
                         <p>let's see</p>
