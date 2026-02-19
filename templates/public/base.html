@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block title %}
+    {% endblock %}
+</head>
+    <header class="flex-row">   
+        <nav class="navbar">
+            <ul class="nav-links flex-row">
+                <li><a class="link-hover" href="{{ url_for('index') }}">Home</a></li>
+                <li><a class="link-hover" href="{{ url_for('music') }}">Music</a></li>
+                <li><a class="link-hover" href="{{ url_for('shows') }}">Shows</a></li>
+                <li>
+                    <details class="flex-column" style="background-color: black;">
+                        <summary class="link-hover">More</summary>
+                        <a>Contact</a>
+                        <a>Videos</a>
+                        <a>Guitar Lessons</a>
+                        <a>Playthroughs</a>
+                    </details>
+                </li>
+                <!-- <li><a href="contact.html">Contact</a></li> -->
+            </ul>
+        </nav>
+
+        <img class="logo" src="{{ url_for('static', filename='assets/amt_logo.png') }}">
+
+    <nav class="navebar">
+        <ul class="nav-links flex-row link-icons">
+            <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram"></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube"></a></li>
+            <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify"></a></li>
+            <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp"></a></li>
+        </ul>
+    </nav>
+
+</header>
+    {% block body %}
+    {% endblock %}
+    
+
+<footer>
+    <nav class="socials">
+        <ul class="social-links">
+            <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram"></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube"></a></li>
+            <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify"></a></li>
+            <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp"></a></li>
+        </ul>
+    </nav>
+</footer> 
+</html>
