@@ -88,6 +88,29 @@ article {
     padding: 1rem;
 }
 
+dialog {
+    opacity: 0;
+    /* Ensure styles persist after animation */
+    animation-fill-mode: forwards;
+    width: 30vw;
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply animation when dialog is open */
+dialog[open] {
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* A semi-transparent black overlay */
+  backdrop-filter: blur(3px); /* Optional: add a blur effect */
+}
+
 /* END BASE */
 
 
@@ -107,6 +130,10 @@ article {
         padding: 0.5rem;
     }
 
+    button {
+        margin-bottom: .5rem;
+        margin-left: .5rem;
+    }
 
 }
 /* END COMPONENTS */
