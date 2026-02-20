@@ -84,6 +84,11 @@ details {
     }
 }
 
+summary:hover {
+    color: gold;
+    cursor: pointer;
+}
+
 article {
     padding: 1rem;
 }
@@ -168,6 +173,9 @@ dialog::backdrop {
     color: white;
     text-align: left;
     padding: none;
+}
+.underline {
+    text-decoration: underline;
 }
 
 /* END UTILITIES */
