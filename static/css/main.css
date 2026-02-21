@@ -66,6 +66,8 @@ a {
     transition: ease-in .1s;
 }
 
+
+
 details {
     background-color: black;
     border: 1px solid white;
@@ -97,8 +99,16 @@ dialog {
     opacity: 0;
     /* Ensure styles persist after animation */
     animation-fill-mode: forwards;
-    width: 30vw;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
 
+    & > * {
+        padding: .5rem;
+        margin: 1rem;
+        text-align: left;
+        list-style-type: none;
+    }
 }
 
 @keyframes fadeIn {
@@ -108,7 +118,7 @@ dialog {
 
 /* Apply animation when dialog is open */
 dialog[open] {
-    animation: fadeIn 0.2s ease-out forwards;
+    animation: fadeIn 0.4s ease-out forwards;
 }
 
 dialog::backdrop {
@@ -140,6 +150,27 @@ dialog::backdrop {
         margin-left: .5rem;
     }
 
+}
+
+.card {
+    /* background-color: black;
+    border: 1px solid white; */
+    padding: 1rem;
+    flex: 1;
+    h4 {
+        width: fit-content;
+    }
+    p {
+        width: 100%;
+    }
+    img {
+        width: 70%;
+    }
+
+}
+.merch-container {
+
+    gap: 1rem;
 }
 /* END COMPONENTS */
 

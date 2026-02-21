@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, redirect, url_for
-from spotify_utils import get_artist_albums, get_track_link
+
 
 
 def register_routes(app):
