@@ -10,11 +10,11 @@
         <main class="content flex-column">
             <dialog class="flex-column" id="more-info" class="flex-column">
                 <h3>More Info</h3>
-                <ul>
-                    <li>City:</li>
-                    <li>Venue:</li>
-                    <li>Address:</li>
-                    <li>Ticket Link:</li>
+                <ul id="more-info">
+                    <li><span class="category">City</span><span class="info">Chicago</span></li>
+                    <li><span class="category">Venue</span><span class="info">Cole's Bar</span></li>
+                    <li><span class="category">Address</span><span class="info">1060 W Addison</span></li>
+                    <li><span class="category">Ticket Link</span><span class="info"><a href="">logan.com</a></span></li>
                 </ul>
                 <form method="dialog">
                     <button>Close</button>
@@ -46,4 +46,18 @@
         </main>
 
     </body>
+    <script>
+        const categories = document.querySelectorAll('.category')
+        const totalChars = 60
+        categories.forEach((category) => {
+            const info = category.nextElementSibling
+            console.log(info.textContent)
+            const addedChar = '_'
+            
+            const totalAdds = 60 - (category.textContent.length + info.textContent.length)
+            console.log(totalAdds)
+            category.textContent += addedChar.repeat(totalAdds)
+            console.log(category.textContent.length)
+        })
+    </script>
 {% endblock %}

@@ -44,15 +44,17 @@
     {% endblock %}
     
 
-<footer>
+<footer class="flex-column">
     <nav class="socials">
         <ul class="social-links">
-            <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram"></a></li>
-            <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube"></a></li>
-            <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify"></a></li>
-            <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp"></a></li>
+            <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram link-hover"></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube link-hover"></a></li>
+            <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify link-hover"></a></li>
+            <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp link-hover"></a></li>
         </ul>
     </nav>
+    <img src="{{ url_for('static', filename='assets/joy_stencil.png') }}" alt="">
+    <p>Site designed by Logan Huber</p>
 </footer> 
 <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
 </html>

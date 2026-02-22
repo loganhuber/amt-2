@@ -126,6 +126,33 @@ dialog::backdrop {
   backdrop-filter: blur(3px); /* Optional: add a blur effect */
 }
 
+footer {
+    background-color: black;
+    height: 90vh;
+    width: 100vw;
+    margin-bottom: -5rem;
+    padding: 1rem;
+    img {
+        width: 30vw;
+    }
+
+    .social-links {
+        font-size: 2rem;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        li {
+            margin: 2rem;
+        }
+    }
+
+    p {
+        width: 100%;
+        text-align: center;
+    }
+    
+}
+
 /* END BASE */
 
 
