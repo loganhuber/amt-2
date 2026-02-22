@@ -45,11 +45,11 @@ body {
     backdrop-filter: blur(11.7px);
     -webkit-backdrop-filter: blur(11.7px);
     border: 1px solid black;
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
 }
 
 p {
-    width: 50%;
+    width: 60%;
 }
 form {
     width: 40%;
@@ -240,6 +240,9 @@ footer {
 
 @media screen and (max-width: 950px) {
 
+    p { 
+        width: 90%;
+    }
     header {
         justify-content: space-between;
     }
