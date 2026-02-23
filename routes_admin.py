@@ -12,3 +12,5 @@ def register_admin_routes(app):
     @app.route('/login')
     def login():
         render_template('admin/login')
+
+    
