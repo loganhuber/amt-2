@@ -48,13 +48,13 @@
     </body>
     <script>
         const categories = document.querySelectorAll('.category')
-        const totalChars = 60
+        const totalChars = 30
         categories.forEach((category) => {
             const info = category.nextElementSibling
             console.log(info.textContent)
             const addedChar = '_'
             
-            const totalAdds = 60 - (category.textContent.length + info.textContent.length)
+            const totalAdds = totalChars - (category.textContent.length + info.textContent.length)
             console.log(totalAdds)
             category.textContent += addedChar.repeat(totalAdds)
             console.log(category.textContent.length)

@@ -153,6 +153,8 @@ footer {
     
 }
 
+
+
 /* END BASE */
 
 
@@ -199,6 +201,12 @@ footer {
 
     gap: 1rem;
 }
+
+.video-container iframe{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block
+}
 /* END COMPONENTS */
 
 
@@ -238,7 +246,14 @@ footer {
 
 /* END UTILITIES */
 
+/* MEDIA QUERIES */
+
 @media screen and (max-width: 950px) {
+    
+    .content {
+        margin-top: 6rem;
+        width: 95%;
+    }
 
     p { 
         width: 90%;
@@ -259,6 +274,8 @@ footer {
         }
     }
 
+
+
     .nav-links.link-icons {
         text-align: end;
     }
@@ -271,5 +288,27 @@ footer {
     details {
         width: 80%;
     }
+
+    footer {
+        img {
+            width: 60vw;
+        }
+    }
+
+    .shows-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    dialog {
+        width: 90%;
+    }
+
+    .merch-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
+
+/* END MEDIA QUERIES */
 

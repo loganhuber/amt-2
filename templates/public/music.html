@@ -9,7 +9,8 @@
 
 <body class="music">
     <main class="content flex-column">
-        <h1>Discography</h1>
+        <img src="{{ url_for('static', filename='assets/gifs/cd.gif') }}" alt="stupid cd gif">
+        <h1>Discography </h1>
         <details class="flex-column" open>
             <summary>Tasteless<span> (2025)</span></summary>
             <img style="width: 30vw" src="{{ url_for('static', filename='assets/album-covers/tastelesscover.png') }}" alt="Album cover for 'Tasetless'">
@@ -41,7 +42,7 @@
             <button><a  href="https://amammothtaskofficial.bandcamp.com/album/tasteless">Buy on Bandcamp</a></button>
             <button><a href="https://amammothtaskofficial.bandcamp.com/album/tasteless">Buy a Cassette</a></button>
         </details>
-                <details class="flex-column">
+        <details class="flex-column">
             <summary>Deep Fake<span> (2023)</span></summary>
             <img style="width: 37vw" src="{{ url_for('static', filename='assets/album-covers/dp.jpg') }}" alt="Album cover for 'Tasetless'">
                         <article style="text-align: left;">

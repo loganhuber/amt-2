@@ -30,3 +30,7 @@ def register_routes(app):
     @app.route('/lessons')
     def lessons():
         return render_template('public/lessons.html')
+    
+    @app.route('/video')
+    def video():
+        return render_template('public/video.html')

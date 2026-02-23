@@ -5,25 +5,54 @@
 <body class="home">
     <main class="content">
         <section>
-            <article>
-                <h1>Learn to play A Mammoth Task</h1>
+            <article class="flex-column">
+                <h1>Learn to play A Mammoth Task <img src="{{ url_for('static', filename='assets/gifs/guitar.gif') }}" alt="stupid guitar gif"></h1>
                 <p>These videos have Logan break down and show you how to play some of A Mammoth Task's material on the electric guitar. These songs sound a lot harder to play than they actually are, I promise. The videos are targeted for a more intermediate skill level, however I encourage you to try at whatever skill level you have! That's how you get better, you gotta give the daunting stuff a go.</p>
-                <p>For each of these lessons there will be a cooresponding play-through video. If any riffs trip you up, I highly recomend watching that part of the play-through and slowing it down. Good luck!</p>
-                <p>If you'd like to recommend a song for a lesson, feel free to email your suggestion <a class="underline link-hover" href="{{ url_for('contact') }}">here</a></p>
+                <p>For each of these lessons there will be a cooresponding play-through video. If any riffs trip you up, I highly recomend watching that part of the play-through and slowing it down. Break the parts down into bite-size chunks and slowly work your way towards playing it at tempo. Good luck!</p>
+                <p>If you'd like to recommend a song for a lesson, feel free to <a class="underline link-hover" href="{{ url_for('contact') }}">email your suggestion.</a></p>
             </article>
         </section>
         <section class="flex-column">
-            <h3>Sell My Shit Lesson</h3>
-            <div class="">
-                <div>
-                    <h5>Lesson</h5>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9M7OWOeFO1o?si=UO6Q40dBzrPuXFL1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <details>
+                <summary>
+                    <h3>Sell My Shit Lesson</h3>
+                </summary>
+                <div class="">
+                    <div>
+                        <h5>Lesson</h5>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/9M7OWOeFO1o?si=UO6Q40dBzrPuXFL1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Play-through</h5>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/hnlwiWdBaHc?si=z7Pqapil2Ht_21uC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h5>Play-through</h5>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hnlwiWdBaHc?si=z7Pqapil2Ht_21uC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </details>
+            
+            <details>
+                <summary>
+                    <h3>Fur Moms Know Best</h3>
+                </summary>
+                <div class="">
+                    <div>
+                        <h5>Lesson</h5>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/j3FElxmhngg?si=aan55lGHJQgAh9QW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Play-through</h5>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pMJ1gFg8ygc?si=9imO3XfPEXcRbNr2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </details>
+
         </section>
     </main>
 
