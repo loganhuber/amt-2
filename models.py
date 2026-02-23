@@ -1,6 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
 
-
 db = SQLAlchemy()
 
 class Admins(db.Model):
@@ -8,7 +7,7 @@ class Admins(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False)
-    pw_hash = db.Column(db.String(50), nullable=False)
+    pw_hash = db.Column(db.String(128), nullable=False)
 
 class Shows(db.Model):
     __tablename__ = 'shows'
@@ -21,10 +20,12 @@ class Shows(db.Model):
     ticket_link = db.Column(db.String(100), nullable=True)
 
 class Merch(db.Model):
-    __tablename = 'merch'
+    __tablename__ = 'merch'
     
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(100), nullable=True)
     image = db.Column(db.String(50), nullable=False)
     link = db.Column(db.String(100), nullable=False)
+
+

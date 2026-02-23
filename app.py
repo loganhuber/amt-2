@@ -1,22 +1,28 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 from routes import register_routes
-from routes_admin import register_admin_routes
-from models import db
+from models import db, Admins, Shows, Merch
+from admin_views import AdminModelView
 
 app = Flask(__name__)
-admin = Admin()
 
-app.config['SQLITE_DATABASE_URI'] = 'sqlite3:///db.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SECRET_KEY'] = 'my_secret'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+
 db.init_app(app)
-admin.init_app(app)
+admin = Admin(app)
+
+
+admin.add_view(AdminModelView(Admins, db.session))
+admin.add_view(ModelView(Shows, db.session))
+admin.add_view(ModelView(Merch, db.session))
 
 register_routes(app)
-register_admin_routes(app)
 
 if __name__=='__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
