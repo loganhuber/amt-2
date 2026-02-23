@@ -136,14 +136,18 @@ footer {
         width: 30vw;
     }
 
+
     .social-links {
         font-size: 2rem;
         list-style-type: none;
         display: flex;
         flex-direction: row;
-        li {
-            margin: 2rem;
-        }
+        flex-shrink: 0;
+        padding-left: 0;
+
+    }
+    li {
+        margin: 2rem;
     }
 
     p {
@@ -300,6 +304,9 @@ footer {
         img {
             width: 60vw;
         }
+        li {
+            margin: .7rem;
+        }
     }
 
     .shows-row {
@@ -318,7 +325,10 @@ footer {
 
     .social-links > li {
         font-size: 1.4rem;
+        
     }
+
+
 }
 
 /* END MEDIA QUERIES */
