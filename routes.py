@@ -9,7 +9,10 @@ def register_routes(app):
     
     @app.route("/")
     def index():
-        return render_template('public/index.html')
+        now = datetime.now()
+        upcoming = Shows.query.filter(Shows.date >= now).order_by(Shows.date.asc()).all()
+
+        return render_template('public/index.html', upcoming=upcoming)
     
 
     @app.route('/shows')

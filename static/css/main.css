@@ -250,6 +250,12 @@ footer {
     text-decoration: underline;
 }
 
+.black-box {
+    background-color: black;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
 /* END UTILITIES */
 
 /* MEDIA QUERIES */
