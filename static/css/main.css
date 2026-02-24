@@ -16,19 +16,19 @@ body {
     align-items: center;
     
     &.home {
-        background: url('../assets/indexbackground.jpeg') no-repeat center center fixed;
+        background: url('../assets/backgrounds/indexbackground.jpeg') no-repeat center center fixed;
         background-size: cover;
     }
     &.shows {
-        background: url('../assets/showsbackground.jpeg') no-repeat center center fixed;
+        background: url('../assets/backgrounds/showsbackground.jpeg') no-repeat center center fixed;
         background-size: cover;
     }
     &.contact {
-        background: url('../assets/contactbackground.jpeg') no-repeat center center fixed;
+        background: url('../assets/backgrounds/contactbackground.jpeg') no-repeat center center fixed;
         background-size: cover;
     }
     &.music {
-    background: url('../assets/musicbackground.jpeg') no-repeat center center fixed;
+    background: url('../assets/backgrounds/musicbackground.jpeg') no-repeat center center fixed;
     background-size: cover;
     }
 

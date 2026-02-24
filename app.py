@@ -39,4 +39,7 @@ register_routes(app)
 if __name__=='__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True, host='10.0.0.151')
+    app.run(debug=True)
+
+
+# for mobile viewing, pass host='10.0.0.151' to app.run()
