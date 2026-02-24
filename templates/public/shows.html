@@ -6,58 +6,55 @@
 
 
 {% block body %}
-    <body class="shows">
-        <main class="content flex-column">
-            <dialog class="flex-column" id="more-info" class="flex-column">
-                <h3>More Info</h3>
-                <ul id="more-info">
-                    <li><span class="category">City</span><span class="info">Chicago</span></li>
-                    <li><span class="category">Venue</span><span class="info">Cole's Bar</span></li>
-                    <li><span class="category">Address</span><span class="info">1060 W Addison</span></li>
-                    <li><span class="category">Ticket Link</span><span class="info"><a href="">logan.com</a></span></li>
-                </ul>
-                <form method="dialog">
-                    <button>Close</button>
-                </form>
-            </dialog>
 
-            <h1>Shows</h1>
-
-            <h3 style="width: 95%;">Upcoming</h3>
-
+<body class="shows">
+    <main class="content flex-column">
+        <dialog class="flex-column" id="more-info" class="flex-column">
+            <h3>More Info</h3>
+            <img id="show-flyer" style="height: 40vh;" src="" alt="Flyer">
+            <ul id="more-info">
+                <!-- <li><span class="category">City</span><span class="info">Chicago</span></li> -->
+                 <li><span id="info-description"></span></li>
+                <li><span class="category">Venue: </span><span id="info-venue" class="info"></span></li>
+                <!-- <li><span class="category">Address</span><span class="info">1060 W Addison</span></li> -->
+                 <li style="display: none;" id="tickets-at-door">Ticket At Door</li>
+                <li style="display: none;" id="get-tickets"><span class="info"><a class="link-hover" target="_blank" id="info-ticket-link" href="">Get Tickets</a></span></li>
+            </ul>
+            <form method="dialog">
+                <button id='close-btn'>Close</button>
+            </form>
+        </dialog>
+        
+        <h1>Shows</h1>
+        
+        <h3 style="width: 95%;">Upcoming</h3>
+        
+        {% for show in upcoming %}
             <div class="shows-row flex-row">
-                <img style="height: 40vh;" src="{{ url_for('static', filename='assets/flyers/327CHICAGO.jpg')}}" alt="" class="flyer">
+                <img style="height: 40vh;" src="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" alt="{{ show.description }}" class="flyer">
                 <div class="info flex-row">
-                    <p>@ Cole's Bar with Squiggle and MoonGoons</p>
-                    <p style="text-align: right;"><sub>Chicago March 27, 2026</sub></p>
+                    <p>{{ show.description }}</p>
+                    <p style="text-align: right;"><sub>{{ show.date.strftime("%B %d, %Y") }}</sub></p>
                 </div>
-                <button onclick="document.getElementById('more-info').showModal()" style="height: 2rem;">INFO</button>
+                <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" class="info-btn" onclick="document.getElementById('more-info').showModal()" style="height: 2rem;">INFO</button>
             </div>
+        {% endfor %}
 
-            <div class="shows-row flex-row">
-                <img style="height: 40vh;" src="{{ url_for('static', filename='assets/flyers/327CHICAGO.jpg')}}" alt="" class="flyer">
-                <div class="info flex-row">
-                    <p>@ Cole's Bar with Squiggle and MoonGoons</p>
-                    <p style="text-align: right;"><sub>Chicago March 27, 2026</sub></p>
-                </div>
-                <button style="height: 2rem;">INFO</button>
-            </div>
             <h3 style="width: 95%">Past</h3>
+
+            {% for show in past %}
+            <div class="shows-row flex-row">
+                <img style="height: 40vh;" src="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" alt="{{ show.description }}" class="flyer">
+                <div class="info flex-row">
+                    <p>{{ show.description }}</p>
+                    <p style="text-align: right;"><sub>{{ show.date.strftime("%B %d, %Y") }}</sub></p>
+                </div>
+                <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" class="info-btn" onclick="document.getElementById('more-info').showModal()" style="height: 2rem;">INFO</button>
+            </div>
+            {% endfor %}
         </main>
 
     </body>
-    <script>
-        const categories = document.querySelectorAll('.category')
-        const totalChars = 30
-        categories.forEach((category) => {
-            const info = category.nextElementSibling
-            console.log(info.textContent)
-            const addedChar = '_'
-            
-            const totalAdds = totalChars - (category.textContent.length + info.textContent.length)
-            console.log(totalAdds)
-            category.textContent += addedChar.repeat(totalAdds)
-            console.log(category.textContent.length)
-        })
-    </script>
+    <script src="{{ url_for('static', filename='javascript/shows.js') }}"></script>
+
 {% endblock %}

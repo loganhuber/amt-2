@@ -1,5 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, redirect, url_for
+from models import Shows
+from datetime import datetime
 
 
 
@@ -12,7 +14,13 @@ def register_routes(app):
 
     @app.route('/shows')
     def shows():
-        return render_template('public/shows.html')
+
+        now = datetime.now()
+
+        upcoming = Shows.query.filter(Shows.date >= now).order_by(Shows.date.asc()).all()
+        past = Shows.query.filter(Shows.date < now).order_by(Shows.date.asc()).all()
+        
+        return render_template('public/shows.html', upcoming=upcoming, past=past)
     
     @app.route('/contact')
     def contact():
