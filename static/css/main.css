@@ -211,6 +211,8 @@ footer {
     aspect-ratio: 16 / 9;
     display: block
 }
+
+
 /* END COMPONENTS */
 
 
@@ -312,6 +314,7 @@ footer {
     .shows-row {
         flex-direction: column;
         align-items: center;
+        
     }
 
     dialog {

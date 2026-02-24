@@ -32,4 +32,7 @@ function handleShowInfo(e) {
     const flyer = document.getElementById('show-flyer')
     flyer.src = btn.dataset.image
 
+    const city = document.getElementById('info-city')
+    city.textContent = btn.dataset.city
+
 }

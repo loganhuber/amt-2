@@ -8,31 +8,23 @@
     <body class="home">
         <main class="content flex-column">
             <h1>Merch</h1>
-            <p>All merch transactions are handled through Bandcamp. To view our merch on bandcamp,<a target="_blank" href="https://amammothtaskofficial.bandcamp.com/merch"> click here.</a></p>
-
+            <p>All merch transactions are handled through Bandcamp. To view our merch on bandcamp,<a class="link-hover" target="_blank" href="https://amammothtaskofficial.bandcamp.com/merch"> click here.</a></p>
 
             <div class="merch-container flex-row">
+                {% for item in merch %}
                 <div class="card flex-column link-hover">
-                    <a target="_blank" href="https://amammothtaskofficial.bandcamp.com/album/tasteless">
-                        <img src="{{ url_for('static', filename='assets/merch/tasteless_cassette.jpeg') }}" alt="Taseteless Cassette">
+                    <a target="_blank" href="{{ item.link }}">
+                        <img src="{{ url_for('static', filename='assets/merch/' ~item.image) }}" alt="{{ item.name }}">
                         <div class="">
-                            <h4>Tasteless Cassette</h4>
-                            <h4>$10</h4>
+                            <h4>{{ item.name }}</h4>
+                            <h4>${{ item.price }}</h4>
+                            {% if item.description %}
+                            <p>{{ item.description }}</p>
+                            {% endif %}
                         </div>
                     </a>
                 </div>
-                <div class="card flex-column link-hover">
-                    <a target="_blank" href="https://amammothtaskofficial.bandcamp.com/merch/paul-harrell-shirt">
-                        <img src="{{ url_for('static', filename='assets/merch/shirt_pic.jpeg')}}" alt="Paul Harrell Shirt">
-                        <div class="">
-                            <h4>Paul Harrell Shirt</h4>
-                            <h4>$20</h4>
-                            <p>Paul Harrell design screen printed on Gildan "Yellow Haze" heavy cotton t-shirt.
-            Artwork by Kyle Bak.
-            Screen Printed at Modest Merch.</p>
-                        </div>
-                    </a>
-                </div>
+                {% endfor %}
             </div>
         </main>
     </body>

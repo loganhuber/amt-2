@@ -13,12 +13,12 @@
             <h3>More Info</h3>
             <img id="show-flyer" style="height: 40vh;" src="" alt="Flyer">
             <ul id="more-info">
-                <!-- <li><span class="category">City</span><span class="info">Chicago</span></li> -->
-                 <li><span id="info-description"></span></li>
+                <li><span id="info-description"></span></li>
+                <li><span class="category">City: </span><span id="info-city" class="info"></span></li>
                 <li><span class="category">Venue: </span><span id="info-venue" class="info"></span></li>
                 <!-- <li><span class="category">Address</span><span class="info">1060 W Addison</span></li> -->
                  <li style="display: none;" id="tickets-at-door">Ticket At Door</li>
-                <li style="display: none;" id="get-tickets"><span class="info"><a class="link-hover" target="_blank" id="info-ticket-link" href="">Get Tickets</a></span></li>
+                <li style="display: none;" id="get-tickets"><span class="info"><a style="text-decoration: underline;" class="link-hover" target="_blank" id="info-ticket-link" href="">Get Tickets</a></span></li>
             </ul>
             <form method="dialog">
                 <button id='close-btn'>Close</button>
@@ -36,11 +36,11 @@
                     <p>{{ show.description }}</p>
                     <p style="text-align: right;"><sub>{{ show.date.strftime("%B %d, %Y") }}</sub></p>
                 </div>
-                <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" class="info-btn" onclick="document.getElementById('more-info').showModal()" style="height: 2rem;">INFO</button>
+                <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" data-city="{{ show.city }}" class="info-btn" onclick="document.getElementById('more-info').showModal()">INFO</button>
             </div>
         {% endfor %}
 
-            <h3 style="width: 95%">Past</h3>
+            <h3 style="width: 95%; margin-top: 10rem;">Past</h3>
 
             {% for show in past %}
             <div class="shows-row flex-row">

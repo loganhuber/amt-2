@@ -18,14 +18,16 @@ class Shows(db.Model):
     date = db.Column(db.DateTime, nullable=False)
     img_filename = db.Column(db.String(50), nullable=True)
     ticket_link = db.Column(db.String(100), nullable=True)
+    city = db.Column(db.String(50), nullable=True)
 
 class Merch(db.Model):
     __tablename__ = 'merch'
     
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    description = db.Column(db.String(100), nullable=True)
+    description = db.Column(db.String(255), nullable=True)
     image = db.Column(db.String(50), nullable=False)
+    price = db.Column(db.Integer, nullable=False)
     link = db.Column(db.String(100), nullable=False)
 
 

@@ -38,4 +38,17 @@ class ShowsModelView(ModelView):
             if os.path.exists(file_path):
                 os.remove(file_path)
 
+
+class MerchModelView(ModelView):
+    def __init__(self, model, session, base_path=None):
+        self.base_path = base_path
+
+        self.form_extra_fields = {
+            'image': FileUploadField(
+                'Image', base_path=self.base_path,
+                relative_path=''
+            )
+        }
+
+        super().__init__(model, session)
     

@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, redirect, url_for
-from models import Shows
+from models import Shows, Merch
 from datetime import datetime
 
 
@@ -33,7 +33,10 @@ def register_routes(app):
     
     @app.route('/merch')
     def merch():
-        return render_template('public/merch.html')
+
+        merch = Merch.query.all()
+
+        return render_template('public/merch.html', merch=merch)
     
     @app.route('/lessons')
     def lessons():
