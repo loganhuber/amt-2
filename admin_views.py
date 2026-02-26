@@ -15,6 +15,7 @@ class SecureAdminIndexView(AdminIndexView):
     
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('login'))
+    
 
 
 class SecureModelView(ModelView):
