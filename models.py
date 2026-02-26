@@ -1,13 +1,14 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
 
 db = SQLAlchemy()
 
-class Admins(db.Model):
+class Admins(UserMixin, db.Model):
     __tablename__ = 'admins'
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False)
-    pw_hash = db.Column(db.String(128), nullable=False)
+    pw_hash = db.Column(db.String(255), nullable=False)
 
 class Shows(db.Model):
     __tablename__ = 'shows'

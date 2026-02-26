@@ -1,8 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, redirect, url_for, request, flash
-from models import Shows, Merch
+from flask_login import login_user, logout_user
+from werkzeug.security import check_password_hash
+from models import Shows, Merch, Admins
 from datetime import datetime
 from email_utils import build_email, send_email, EmailSendError
+
+
 
 
 
@@ -66,3 +70,26 @@ def register_routes(app):
     @app.route('/video')
     def video():
         return render_template('public/video.html')
+    
+    @app.route('/login', methods=["POST", "GET"])
+    def login():
+
+        if request.method == 'POST':
+            username = request.form.get('username')
+            password = request.form.get('password')
+
+            user = Admins.query.filter_by(username=username).first()
+
+            if user and check_password_hash(user.pw_hash, password):
+                login_user(user)
+                return redirect('/admin')
+
+            flash("Invalid Credentials")
+        return render_template('admin/login.html')
+    
+    @app.route('/logout', methods=["GET", "POST"])
+    def logout():
+
+    
+        logout_user()
+        return redirect('/')
