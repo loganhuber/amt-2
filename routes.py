@@ -1,13 +1,15 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, redirect, url_for, request, flash
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, current_user
 from werkzeug.security import check_password_hash
 from models import Shows, Merch, Admins
 from datetime import datetime
 from email_utils import build_email, send_email, EmailSendError
 
 
-
+def display_portal_link():
+    if current_user.is_authenticated:
+        flash("logged_in" "auth")
 
 
 
@@ -15,6 +17,9 @@ def register_routes(app):
     
     @app.route("/")
     def index():
+        if current_user.is_authenticated:
+            flash("logged_in", "auth")
+
         now = datetime.now()
         upcoming = Shows.query.filter(Shows.date >= now).order_by(Shows.date.asc()).all()
 
@@ -74,6 +79,9 @@ def register_routes(app):
     @app.route('/login', methods=["POST", "GET"])
     def login():
 
+        if current_user.is_authenticated:
+            return redirect(url_for('admin.index'))
+
         if request.method == 'POST':
             username = request.form.get('username')
             password = request.form.get('password')
@@ -93,3 +101,4 @@ def register_routes(app):
     
         logout_user()
         return redirect('/')
+    

@@ -212,6 +212,17 @@ footer {
     display: block
 }
 
+.alert {
+    background-color: black;
+    width: 100vw;
+    margin-top: -2rem;
+    p { 
+        
+        text-align: center;
+        width: 100%;
+    }
+
+}
 
 /* END COMPONENTS */
 

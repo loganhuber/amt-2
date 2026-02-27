@@ -8,6 +8,18 @@
     {% block title %}
     {% endblock %}
 </head>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+    {% if message == 'logged_in' %}
+      <div class="alert alert-{{ category }}">
+        <p>You are logged in. <a class="link-hover" href="{{ url_for('admin.index') }}">Visit Admin Portal</a></p>
+      </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
     <header class="flex-row">   
         <nav class="navbar">
             <ul class="nav-links flex-row">

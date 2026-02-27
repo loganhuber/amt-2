@@ -1,0 +1,29 @@
+{% extends 'admin/master.html' %}
+
+
+{% block page_body %}
+{{ super() }}
+
+<style>
+    .btns {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+    }
+</style>
+<div class="container">
+    <h1>Welocme, {{ user }}</h1>
+    <div class="btns">
+        <h5>
+            <a href="{{ url_for('index') }}">View Site</a>
+        </h5>
+        <h5>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </h5>
+    </div>
+</div>
+
+
+
+{% endblock %}

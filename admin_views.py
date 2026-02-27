@@ -2,7 +2,7 @@ from flask_admin.contrib.sqla import ModelView
 from flask_admin.form import FileUploadField
 from flask import current_app
 from flask_login import current_user
-from flask_admin import AdminIndexView
+from flask_admin import AdminIndexView, expose
 from flask import redirect, url_for
 from werkzeug.security import generate_password_hash
 from wtforms import PasswordField
@@ -16,6 +16,12 @@ class SecureAdminIndexView(AdminIndexView):
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('login'))
     
+    @expose('/')
+    def index(self):
+        return self.render(
+            'admin/index.html',
+            user=current_user.username
+        )
 
 
 class SecureModelView(ModelView):
