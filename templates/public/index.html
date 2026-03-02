@@ -13,6 +13,80 @@
     <!-- TODO set display: none; when I set up the loader -->
     <main class="content flex-column" id="content" > 
             
+        {% if upcoming %}
+        <section class="flex-column" style="width: 100%;">
+            <h2><a class="link-hover" href="{{ url_for('shows') }}">Upcoming Shows:</a></h2>
+            <div style="width: 80%;" class="flex-column">
+            {% for show in upcoming %}
+                <div style="width: 100%; align-items: end;" class="flex-row line-break">
+                    {% if show.ticket_link %}
+                    <a target="_blank" href="{{ show.ticket_link }}">
+                        <img style="height: 30vh;" src="{{ url_for('static', filename='assets/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
+                    </a>
+                    {% else %}
+                        <img style="height: 30vh;" src="{{ url_for('static', filename='assets/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
+                    {% endif %}
+                    <p style="text-align: right; margin-right: 1rem;">{{ show.date.strftime("%B %d, %Y") }}</p>
+                    <p style="width: 100%;">{{ show.city }}</p>
+                    <p style="width: 100%;">{{ show.description }}</p>
+                </div>
+
+                {% endfor %}
+            </div>
+            <p class="link-hover underline" style="text-align: center; width: 100%"><a href="{{ url_for('shows') }}">View More</a></p>
+        </section>
+        {% endif %}
+
+        <section style="width: 100%;" class="line-break">
+            <article style="padding: 2rem;" class="black-box">
+                <h1>Tasteless</h1>
+                <div style="justify-self: center;" class="flex-row album-announcement">
+                    <img style="width: 25vw" src="{{ url_for('static', filename='assets/album-covers/tastelesscover.png') }}" alt="Taseteless album cover">
+                    <div style="justify-content: flex-end;" class="flex-column">
+                        <p style="width: 20vw">Our new EP, "Tasteless", is just that. Stream it everywhere you stream music. Cassettes available <a target="_blank" class="link-hover underline" href="https://amammothtaskofficial.bandcamp.com/album/tasteless">on Bandcamp</a></p>
+                        <iframe style="border: 0; width: 100%; height: 42px; margin-top: 1rem; margin-bottom: 1rem;" src="https://bandcamp.com/EmbeddedPlayer/album=1967471326/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/" seamless><a href="https://amammothtaskofficial.bandcamp.com/album/tasteless">Tasteless by A Mammoth Task</a></iframe>            
+                        <div>
+
+                            <button><a href="">Listen on Spotify</a></button>
+                            <button><a href="">Buy Cassette</a></button>
+                            <button><a href="{{ url_for('music') }}">More Music</a></button>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </article>
+            
+        </section>
+        
+        <section style="width: 100%" class="line-break">
+            <h2 style="text-align: center;">Video</h2>
+            <h3>DZ Records Session (2023)</h3>
+            <div  class="video-container">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4blUaGkWw0M" title="Crop Circles by A Mammoth Task (Live at DZ Records)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div style="width: 100%; margin-top: 3rem; justify-content: space-between;" class="flex-row">
+                <div>
+                    <h3>The Hive Session (2019)</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kVGy2C-M0SU" title="A Mammoth Task | The Hive | Session 36" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>Live at SubT Downstairs (2024)</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOLqqelfrks?si=bTgYPlIHNtBZaPUu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                <h3>Learn To Play AMT</h3>
+                <div class="video-container">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/j3FElxmhngg?si=MDZ7abSNFzCZHpk2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+            <p><a class="link-hover underline" href="{{ url_for('video')}}">View More</a></p>
+        </section>
 
         <section class="line-break">
             <article class="flex-column">
@@ -30,68 +104,36 @@
                     </p>
             </article>
         </section>
-        {% if upcoming %}
-        <section class="flex-column" style="width: 80%;">
-            <h4><a class="link-hover" href="{{ url_for('shows') }}">Upcoming Shows:</a></h4>
-            <div style="width: 80%;" class="flex-column">
-            {% for show in upcoming %}
-                <div style="width: 100%;" class="flex-row">
-                    <p style="text-align: right; margin-right: 1rem;">{{ show.date.strftime("%B %d, %Y") }}</p>
-                    <p style="width: 100%;">{{ show.city }}</p>
-                    <p style="width: 100%;">{{ show.description }}</p>
-                </div>
 
-                {% endfor %}
-            </div>
-            <p class="link-hover underline" style="text-align: center; width: 100%"><a href="{{ url_for('shows') }}">View More</a></p>
-        </section>
-        {% endif %}
-        <section class="line-break">
-            <article class="black-box">
-                <h2>New album, "Tasteless", out now</h2>
-                <div class="flex-row album-announcement">
-                    <img style="width: 15vw" src="{{ url_for('static', filename='assets/album-covers/tastelesscover.png') }}" alt="Taseteless album cover">
-                    <p style="width: 20vw">New five song EP. Stream it everywhere you stream music. Cassettes available <a target="_blank" class="link-hover underline" href="https://amammothtaskofficial.bandcamp.com/album/tasteless">on Bandcamp</a></p>
-                </div>
-                <iframe style="border: 0; width: 100%; height: 42px; margin-top: 1rem; margin-bottom: 1rem;" src="https://bandcamp.com/EmbeddedPlayer/album=1967471326/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/" seamless><a href="https://amammothtaskofficial.bandcamp.com/album/tasteless">Tasteless by A Mammoth Task</a></iframe>            
-
-            </article>
-
-        </section>
-
-        <section style="width: 100%" class="line-break">
-            <h2 style="text-align: center;">Video</h2>
-            <h3>DZ Records Session (2023)</h3>
-            <div  class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4blUaGkWw0M" title="Crop Circles by A Mammoth Task (Live at DZ Records)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <h3>The Hive Session (2019)</h3>
-            <div class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kVGy2C-M0SU" title="A Mammoth Task | The Hive | Session 36" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <p><a class="link-hover underline" href="{{ url_for('video')}}">View More</a></p>
-        </section>
-        
         <section>
             <h2>Meet the Band</h2>
-            <div class="flex-row">
-                <img src="" alt="">
-                <h4>Chris Fleming</h4>
-                <p>Bass/Vocals</p>
-                <p></p>
+            <div style="align-items: flex-end; justify-content: space-between;" class="flex-row">
+                <img style="width: 20vw" src="{{ url_for('static', filename='assets/bios/chris.jpeg' )}}" alt="">
+                <div>
+                    <h4>Chris Fleming</h4>
+                    <p>Bass/Vocals</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magni quod rerum, fugit amet in accusamus laboriosam alias aliquam numquam velit fugiat minima iste, voluptas veniam nihil sunt libero autem.</p>
             </div>
-            <div class="flex-row">
-                <img src="" alt="">
-                <h4>John Fitzgerald</h4>
-                <p>Drums</p>
-                <p></p>
+            <div style="align-items: flex-end; justify-content: space-between;" class="flex-row">
+                <img style="width: 20vw" src="{{ url_for('static', filename='assets/bios/john.jpeg' )}}" alt="">
+                <div>
+                    <h4>John Fitzgerald</h4>
+                    <p>Drums</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ratione adipisci magnam porro praesentium ut, tenetur expedita hic in quaerat architecto facere accusantium consequuntur nisi deserunt suscipit, delectus soluta officia!</p>
             </div>
-            <div class="flex-row">
-                <img src="" alt="">
-                <h4>Logan Huber</h4>
-                <p>Guitar</p>
-                <p></p>
+            <div style="align-items: flex-end; justify-content: space-between;" class="flex-row">
+                <img style="width: 20vw" src="{{ url_for('static', filename='assets/bios/logan.jpeg' )}}" alt="">
+                <div>
+                    <h4>Logan Huber</h4>
+                    <p>Guitar</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident et repudiandae cumque illo nobis dolores perspiciatis vero laboriosam maiores, molestias sint modi laborum aliquid vitae cupiditate repellat. Voluptate, odio obcaecati.</p>
             </div>
         </section>
+
+
+        
     </main>
 {% endblock %}
