@@ -114,6 +114,10 @@ dialog {
     }
 }
 
+section {
+    margin: 2rem;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -286,6 +290,8 @@ footer {
     padding: 1rem;
 }
 
+
+
 /* END UTILITIES */
 
 /* MEDIA QUERIES */
@@ -294,11 +300,19 @@ footer {
     
     .content {
         margin-top: 6rem;
-        width: 95%;
+        width: 98%;
     }
 
     p { 
-        width: 90%;
+        width: 95%;
+    }
+    section {
+        width: 100%;
+    }
+
+    article {
+        width: 95%;
+        padding: .5rem;
     }
     header {
         align-items: center;
@@ -334,7 +348,7 @@ footer {
     }
 
     details {
-        width: 80%;
+        width: 95%;
     }
 
     footer {
@@ -367,7 +381,9 @@ footer {
         
     }
 
-
+    .sam-pic {
+        width: 100%;
+    }
 }
 
 /* END MEDIA QUERIES */

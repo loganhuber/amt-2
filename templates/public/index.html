@@ -25,66 +25,73 @@
                     <br>
                     <strong>-Sam Farmer</strong>
                 </p>
-                    <div id="sam-block">
-                        <a href="https://www.youtube.com/@farmer5123" target="_blank">
-                            <img style="width: 30vw;" id="sam-pic" src="{{ url_for('static', filename='assets/sampic.jpg')}}">
-                        </a>
-                    </div>
-                    <p>AMT, Sam Farmer, and his dad at Cobra Lounge. Click the 
-                        picture to visit Sam's Youtube channel.
+                    <img width="50%" class="sam-pic" src="{{ url_for('static', filename='assets/sampic.jpg')}}">
+                    <p>AMT, Sam Farmer, and his dad at Cobra Lounge. <a class="link-hover underline" href="https://www.youtube.com/@farmer5123" target="_blank">View his Youtube channel</a> 
                     </p>
             </article>
         </section>
         {% if upcoming %}
-        <section class="flex-column line-break">
+        <section class="flex-column" style="width: 80%;">
             <h4><a class="link-hover" href="{{ url_for('shows') }}">Upcoming Shows:</a></h4>
-            <div class="flex-column">
+            <div style="width: 80%;" class="flex-column">
             {% for show in upcoming %}
-                <div class="flex-row">
+                <div style="width: 100%;" class="flex-row">
                     <p style="text-align: right; margin-right: 1rem;">{{ show.date.strftime("%B %d, %Y") }}</p>
-                    <p>{{ show.city }}</p>
-                    <p>{{ show.description }}</p>
+                    <p style="width: 100%;">{{ show.city }}</p>
+                    <p style="width: 100%;">{{ show.description }}</p>
                 </div>
 
                 {% endfor %}
             </div>
-            <p class="link-hover" style="text-align: left; width: 100%"><a href="{{ url_for('shows') }}">View More</a></p>
+            <p class="link-hover underline" style="text-align: center; width: 100%"><a href="{{ url_for('shows') }}">View More</a></p>
         </section>
         {% endif %}
         <section class="line-break">
-            <article>
+            <article class="black-box">
                 <h2>New album, "Tasteless", out now</h2>
                 <div class="flex-row album-announcement">
-                    <img style="width: 30vw" src="{{ url_for('static', filename='assets/album-covers/tastelesscover.png') }}" alt="Taseteless album cover">
-                    <p style="width: 30vw">New five song EP. Stream it everywhere you stream music. Cassettes available <a target="_blank" class="link-hover underline" href="https://amammothtaskofficial.bandcamp.com/album/tasteless">on Bandcamp</a></p>
+                    <img style="width: 15vw" src="{{ url_for('static', filename='assets/album-covers/tastelesscover.png') }}" alt="Taseteless album cover">
+                    <p style="width: 20vw">New five song EP. Stream it everywhere you stream music. Cassettes available <a target="_blank" class="link-hover underline" href="https://amammothtaskofficial.bandcamp.com/album/tasteless">on Bandcamp</a></p>
                 </div>
-                <iframe style="border: 0; width: 80%; height: 42px; margin-top: 1rem; margin-bottom: 1rem;" src="https://bandcamp.com/EmbeddedPlayer/album=1967471326/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/" seamless><a href="https://amammothtaskofficial.bandcamp.com/album/tasteless">Tasteless by A Mammoth Task</a></iframe>            
+                <iframe style="border: 0; width: 100%; height: 42px; margin-top: 1rem; margin-bottom: 1rem;" src="https://bandcamp.com/EmbeddedPlayer/album=1967471326/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/" seamless><a href="https://amammothtaskofficial.bandcamp.com/album/tasteless">Tasteless by A Mammoth Task</a></iframe>            
 
             </article>
 
         </section>
 
-        <section>
-            <h4>Video</h4>
-            <div class="video-container">
+        <section style="width: 100%" class="line-break">
+            <h2 style="text-align: center;">Video</h2>
+            <h3>DZ Records Session (2023)</h3>
+            <div  class="video-container">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4blUaGkWw0M" title="Crop Circles by A Mammoth Task (Live at DZ Records)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/fvIM9xuLKvk?list=PL_1j5XXneTFpgZy_nk9Oz0uNdxTm7Z3J4" title="A Mammoth Task System of a Down partial cover set sorry ran out of room guys" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
+            <h3>The Hive Session (2019)</h3>
             <div class="video-container">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kVGy2C-M0SU" title="A Mammoth Task | The Hive | Session 36" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <hr>
-            <h2>Learn to play A Mammoth Task songs</h2>
-            <div class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/j3FElxmhngg?si=InPViof6G38PFZfr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9M7OWOeFO1o?si=FBWXtUeynhBiFi-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+            <p><a class="link-hover underline" href="{{ url_for('video')}}">View More</a></p>
         </section>
         
+        <section>
+            <h2>Meet the Band</h2>
+            <div class="flex-row">
+                <img src="" alt="">
+                <h4>Chris Fleming</h4>
+                <p>Bass/Vocals</p>
+                <p></p>
+            </div>
+            <div class="flex-row">
+                <img src="" alt="">
+                <h4>John Fitzgerald</h4>
+                <p>Drums</p>
+                <p></p>
+            </div>
+            <div class="flex-row">
+                <img src="" alt="">
+                <h4>Logan Huber</h4>
+                <p>Guitar</p>
+                <p></p>
+            </div>
+        </section>
     </main>
 {% endblock %}
