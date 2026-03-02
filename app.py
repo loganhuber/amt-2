@@ -26,27 +26,27 @@ def load_user(user_id):
     return Admins.query.get(int(user_id))
 
 
-admin.add_view(SecureModelView(Admins, db.session))
+admin.add_view(AdminModelView(Admins, db.session))
 admin.add_view(
-    SecureModelView(
+    ShowsModelView(
         Shows,
-        db.session
+        db.session,
+        os.path.join(app.root_path, 'static/assets/flyers')
     )
 )
 
 admin.add_view(
-    SecureModelView(
+    MerchModelView(
         Merch,
-        db.session
+        db.session,
+        os.path.join(app.root_path, 'static/assets/merch')
     )
 )
 
 register_routes(app)
 
 if __name__=='__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
 
 
 # for mobile viewing, pass host='10.0.0.151' to app.run()

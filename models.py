@@ -27,7 +27,7 @@ class Merch(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(255), nullable=True)
-    image = db.Column(db.String(50), nullable=False)
+    img_filename = db.Column(db.String(255), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     link = db.Column(db.String(100), nullable=False)
 

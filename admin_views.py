@@ -47,14 +47,13 @@ class AdminModelView(SecureModelView):
 
 
 class ShowsModelView(SecureModelView):
-    def __init__(self, model, session, base_path=None):
-        self.base_path = base_path
+    def __init__(self, model, session, upload_path):
+        self.upload_path = upload_path
 
         self.form_extra_fields = {
             'img_filename': FileUploadField(
                 'Image',
-                base_path=self.base_path,
-                relative_path='static/assets/flyers'
+                base_path=self.upload_path
             )
         }
 
@@ -62,7 +61,7 @@ class ShowsModelView(SecureModelView):
 
     def on_model_delete(self, model):
         if model.img_filename:
-            file_path = os.path.join(self.base_path, model.img_filename)
+            file_path = os.path.join(self.upload_path, model.img_filename)
 
             if os.path.exists(file_path):
                 os.remove(file_path)
@@ -70,15 +69,21 @@ class ShowsModelView(SecureModelView):
 
 
 class MerchModelView(SecureModelView):
-    def __init__(self, model, session, base_path=None):
-        self.base_path = base_path
+    def __init__(self, model, session, upload_path):
+        self.upload_path = upload_path
 
         self.form_extra_fields = {
-            'image': FileUploadField(
-                'Image', base_path=self.base_path,
-                relative_path='static/assets/merch'
+            'img_filename': FileUploadField(
+                'Image',
+                base_path=self.upload_path
             )
         }
 
         super().__init__(model, session)
+
+    def on_model_delete(self, model):
+        if model.img_filename:
+            file_path = os.path.join(self.upload_path, model.img_filename)
+            if os.path.exists(file_path):
+                os.remove(file_path)
     

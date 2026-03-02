@@ -17,8 +17,8 @@ def register_routes(app):
     
     @app.route("/")
     def index():
-        if current_user.is_authenticated:
-            flash("logged_in", "auth")
+
+        display_portal_link()
 
         now = datetime.now()
         upcoming = Shows.query.filter(Shows.date >= now).order_by(Shows.date.asc()).all()
