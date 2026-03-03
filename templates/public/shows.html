@@ -21,7 +21,7 @@
                 <li style="display: none;" id="get-tickets"><span class="info"><a style="text-decoration: underline;" class="link-hover" target="_blank" id="info-ticket-link" href="">Get Tickets</a></span></li>
             </ul>
             <form method="dialog">
-                <button id='close-btn'>Close</button>
+                <button class="button-16" id='close-btn'>Close</button>
             </form>
         </dialog>
         
@@ -36,7 +36,7 @@
                     <p>{{ show.description }}</p>
                     <p style="text-align: right;"><sub>{{ show.date.strftime("%B %d, %Y") }}</sub></p>
                 </div>
-                <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" data-city="{{ show.city }}" class="info-btn" onclick="document.getElementById('more-info').showModal()">INFO</button>
+                <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" data-city="{{ show.city }}" class="info-btn button-16" onclick="document.getElementById('more-info').showModal()">INFO</button>
             </div>
         {% endfor %}
 
@@ -49,8 +49,7 @@
                     <p>{{ show.description }}</p>
                     <p style="text-align: right;"><sub>{{ show.date.strftime("%B %d, %Y") }}</sub></p>
                 </div>
-                <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='assets/flyers/' ~show.img_filename) }}" class="info-btn" onclick="document.getElementById('more-info').showModal()" style="height: 2rem;">INFO</button>
-            </div>
+,            </div>
             {% endfor %}
         </main>
 

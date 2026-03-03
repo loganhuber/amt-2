@@ -174,12 +174,52 @@ footer {
     }
 }
 
+.tab-content {
+    width: 100%;
+    padding: 2rem;
+    .video-container {
+        width: 90%;
+        margin: 2rem;
+    }
+}
 
 
 /* END BASE */
 
 
 /* COMPONENTS */
+
+
+/* CSS */
+.button-16 {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.button-16:hover {
+  border-color: gold;
+  box-shadow: rgba(255, 217, 0, 0.209) 0 3px 3px;
+  color: #202124;
+}
+
+.button-16:focus {
+  border-color: #4285f4;
+  outline: none;
+}
 
 .vids-rows {
     width: 100%; 
@@ -253,8 +293,11 @@ footer {
 }
 
 .album-announcement {
+    padding: 1rem;
     gap: 1rem;
     img {
+        aspect-ratio: 1/1;
+        height: auto;
         width: 25vw;
     }
     div {
@@ -265,6 +308,8 @@ footer {
         width: 100%;
         align-self: flex-end;
     }
+
+
 }
 
 .show-row-homepage {
@@ -464,9 +509,8 @@ footer {
         align-items: center;
 
         a > img {
-            
-            height: auto;
             width: 80vw;
+            height: auto;
         }
 
         #show-date {

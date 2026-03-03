@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', toggleMenu)
+    document.addEventListener('click', toggleTabs)
 })
 
-
+// toggles more buttons on navbar in base.html
 function toggleMenu(e) {
     const btn = document.querySelector('.dropdown-btn')
     const dropdown = document.querySelector('.dropdown')
@@ -13,4 +14,32 @@ function toggleMenu(e) {
     if (e.target.matches('button.dropdown-btn')) {
         dropdown.classList.toggle('hidden')
     }
+}
+
+// for switching tabs on video.html
+function toggleTabs(e) {
+    if (!e.target.matches('button.tab-btn')) return
+
+    const btns = document.querySelectorAll('.tab-btn')
+    if (e.target.matches('button.tab-btn.active')) return
+
+    const selectedBtn = e.target.closest('.tab-btn')
+    const id = selectedBtn.dataset.target
+    const tabs = document.querySelectorAll('.tab-content')
+    tabs.forEach((tab) => {
+        if (!tab.classList.contains('hidden')) {
+            tab.classList.add('hidden')
+        }
+    })
+
+    btns.forEach((btn) => {
+        if (btn.classList.contains('active')) {
+            btn.classList.remove('active')
+        }
+    })
+    selectedBtn.classList.add('active')
+
+    const selectedContent = document.querySelector(id)
+    selectedContent.classList.remove('hidden')
+
 }
