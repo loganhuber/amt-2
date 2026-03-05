@@ -46,7 +46,7 @@ admin.add_view(
 register_routes(app)
 
 if __name__=='__main__':
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=False, host='10.0.0.151')
 
 
 # for mobile viewing, pass host='10.0.0.151' to app.run()
