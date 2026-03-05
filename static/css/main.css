@@ -31,7 +31,18 @@ body {
     background: url('../assets/backgrounds/musicbackground.jpeg') no-repeat center center fixed;
     background-size: cover;
     }
-
+    &.lessons {
+    background: url('../assets/backgrounds/lessonsbackground.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    }
+    &.video {
+    background: url('../assets/backgrounds/videobackground.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    }
+    &.merch {
+    background: url('../assets/backgrounds/merchbackground.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    }
     
 }
 .content {
@@ -195,7 +206,7 @@ footer {
 .tab-content {
     border: 1px solid rgba(255, 217, 0, 0.53);
     background-color: #2021248c;
-    width: 100%;
+    width: 97%;
     padding: 2rem;
     .video-container {
         width: 90%;
@@ -209,6 +220,18 @@ footer {
 
 /* COMPONENTS */
 
+
+.contact-form {
+    input {
+        height: 2rem;
+        font-size: 1.3rem;
+    }
+
+    textarea {
+        resize: none;
+        font-size: 1.1rem;
+    }
+}
 
 /* CSS */
 .button-16 {
@@ -260,17 +283,21 @@ footer {
     justify-content: space-between;
     align-items: flex-end;
     border-bottom: 1px solid white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     .info {
         width: 95%;
         padding: 0.5rem;
     }
 
     button {
-        margin-bottom: .5rem;
-        margin-left: .5rem;
+        margin-left: 3rem;
+        
+        
     }
 
+    .show-row-date {
+        text-align: right;
+    }
 }
 
 .card {
@@ -540,6 +567,21 @@ footer {
 
         p {
             text-align: center;
+        }
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: center;
+        p {
+            text-align: center;
+        }
+        .show-row-date {
+            text-align: center;
+        }
+
+        button {
+            margin-left: 0;
         }
     }
 }
