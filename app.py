@@ -7,7 +7,7 @@ from admin_views import AdminModelView, ShowsModelView, MerchModelView, SecureMo
 from flask_login import LoginManager
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, instance_relative_config=True)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SECRET_KEY'] = 'my_secret'

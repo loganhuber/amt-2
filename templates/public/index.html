@@ -8,9 +8,9 @@
 {% block body %}
 <body class="home">
 
-    <div id="loader"></div>
+    <!-- <div id="loader"></div> -->
 
-    <!-- TODO set display: none; when I set up the loader -->
+    <!-- TODO set display: none; if deciding to use a loader -->
     <main class="content flex-column" id="content" > 
             
         {% if upcoming %}
@@ -20,11 +20,11 @@
             {% for show in upcoming %}
                 <div class="flex-row line-break show-row-homepage">
                     {% if show.ticket_link %}
-                    <a target="_blank" href="{{ show.ticket_link }}">
-                        <img src="{{ url_for('static', filename='uploads/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
+                    <a  target="_blank" href="{{ show.ticket_link }}">
+                        <img src="{{ url_for('uploaded_file', filename='flyers/' ~show.img_filename) }}" alt="{{ show.description }}">
                     </a>
                     {% else %}
-                        <img src="{{ url_for('static', filename='uploads/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
+                        <img src="{{ url_for('uploaded_file', filename='flyers/' ~show.img_filename) }}" alt="{{ show.description }}">
                     {% endif %}
                     <p id="show-date">{{ show.date.strftime("%B %d, %Y") }}</p>
                     <p style="width: 100%;">{{ show.city }}</p>

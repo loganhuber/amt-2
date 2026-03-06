@@ -14,7 +14,7 @@
                 {% for item in merch %}
                 <div class="card flex-column link-hover">
                     <a target="_blank" href="{{ item.link }}">
-                        <img src="{{ url_for('static', filename='uploads/merch/' ~item.img_filename) }}" alt="{{ item.name }}">
+                        <img src="{{ url_for('uploaded_file', filename='merch/' ~item.img_filename) }}" alt="{{ item.name }}">
                         <div class="">
                             <h4>{{ item.name }}</h4>
                             <h4>${{ item.price }}</h4>

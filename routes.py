@@ -1,10 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask import render_template, redirect, url_for, request, flash
+from flask import render_template, redirect, url_for, request, flash, send_from_directory
 from flask_login import login_user, logout_user, current_user
 from werkzeug.security import check_password_hash
 from models import Shows, Merch, Admins
 from datetime import datetime
 from email_utils import build_email, send_email, EmailSendError
+import os
 
 
 def display_portal_link():
@@ -102,3 +103,9 @@ def register_routes(app):
         logout_user()
         return redirect('/')
     
+    @app.route('/uploads/<path:filename>')
+    def uploaded_file(filename):
+        return send_from_directory(
+            os.path.join(app.instance_path, 'uploads'),
+            filename
+        )

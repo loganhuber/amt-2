@@ -31,7 +31,7 @@
         
         {% for show in upcoming %}
             <div class="shows-row flex-row">
-                <img style="height: 40vh;" src="{{ url_for('static', filename='uploads/flyers/' ~show.img_filename) }}" alt="{{ show.description }}" class="flyer">
+                <img style="height: 40vh;" src="{{ url_for('uploaded_file', filename='flyers/' ~show.img_filename) }}" alt="{{ show.description }}" class="flyer">
                 <div class="info flex-row">
                     <p>{{ show.description }}</p>
                     <p class="show-row-date" >{{ show.date.strftime("%B %d, %Y") }}</p>
@@ -44,7 +44,7 @@
 
             {% for show in past %}
             <div class="shows-row flex-row">
-                <img style="height: 40vh;" src="{{ url_for('static', filename='uploads/flyers/' ~show.img_filename) }}" alt="{{ show.description }}" class="flyer">
+                <img style="height: 40vh;" src="{{ url_for('uploaded_file', filename='flyers/' ~show.img_filename) }}" alt="{{ show.description }}" class="flyer">
                 <div class="info flex-row">
                     <p>{{ show.description }}</p>
                     <p class="show-row-date">{{ show.date.strftime("%B %d, %Y") }}</p>
