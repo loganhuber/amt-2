@@ -31,7 +31,7 @@ admin.add_view(
     ShowsModelView(
         Shows,
         db.session,
-        os.path.join(app.root_path, 'static/assets/flyers')
+        os.path.join(app.root_path, 'static/uploads/flyers')
     )
 )
 
@@ -39,7 +39,7 @@ admin.add_view(
     MerchModelView(
         Merch,
         db.session,
-        os.path.join(app.root_path, 'static/assets/merch')
+        os.path.join(app.root_path, 'static/uploads/merch')
     )
 )
 

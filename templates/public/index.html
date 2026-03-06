@@ -21,10 +21,10 @@
                 <div class="flex-row line-break show-row-homepage">
                     {% if show.ticket_link %}
                     <a target="_blank" href="{{ show.ticket_link }}">
-                        <img src="{{ url_for('static', filename='assets/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
+                        <img src="{{ url_for('static', filename='uploads/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
                     </a>
                     {% else %}
-                        <img src="{{ url_for('static', filename='assets/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
+                        <img src="{{ url_for('static', filename='uploads/flyers/' ~show.img_filename)}}" alt="{{ show.description }}">
                     {% endif %}
                     <p id="show-date">{{ show.date.strftime("%B %d, %Y") }}</p>
                     <p style="width: 100%;">{{ show.city }}</p>

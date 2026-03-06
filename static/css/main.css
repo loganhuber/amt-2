@@ -222,6 +222,8 @@ footer {
 /* COMPONENTS */
 
 
+
+
 .contact-form {
     input {
         height: 2rem;
@@ -503,8 +505,12 @@ footer {
     }
 
     dialog {
-        width: 90%;
+        width: 90vw;
     }
+
+    dialog:not([open]) {
+    display: none;
+}
 
     .merch-container {
         flex-direction: column;
@@ -606,6 +612,7 @@ footer {
     .footer {
         height: 80vh;
     }
+
 }
 
 @media (max-width: 1000px) {
