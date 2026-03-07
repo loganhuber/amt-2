@@ -1,14 +1,9 @@
-import os
 import smtplib
-from dotenv import load_dotenv
 from datetime import datetime
 from dataclasses import dataclass
 from email.message import EmailMessage
+from flask import current_app
 
-load_dotenv()
-
-EMAIL_ADDRESS = os.environ.get('EMAIL_ADDRESS')
-EMAIL_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
 class EmailSendError(Exception):
     pass
@@ -21,6 +16,8 @@ class OutgoingMail:
 
 
 def build_email(user_email, name, message):
+
+    EMAIL_ADDRESS = current_app.config['EMAIL_ADDRESS']
 
     email = OutgoingMail(
         to=EMAIL_ADDRESS,
@@ -37,6 +34,9 @@ def build_email(user_email, name, message):
 
 def send_email(email: OutgoingMail):
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+
+        EMAIL_ADDRESS = current_app.config['EMAIL_ADDRESS']
+        EMAIL_PASSWORD = current_app.config['EMAIL_PASSWORD']
 
         if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
             raise RuntimeError("Error: Email or Password not set")

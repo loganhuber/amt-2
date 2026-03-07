@@ -6,13 +6,11 @@ from models import db, Admins, Shows, Merch
 from admin_views import AdminModelView, ShowsModelView, MerchModelView, SecureModelView, SecureAdminIndexView
 from flask_login import LoginManager
 import os
+from config import Config
 
 app = Flask(__name__, instance_relative_config=True)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
+app.config.from_object(Config)
 
 db.init_app(app)
 admin = Admin(app, index_view=SecureAdminIndexView())
@@ -31,7 +29,7 @@ admin.add_view(
     ShowsModelView(
         Shows,
         db.session,
-        os.path.join(app.root_path, 'static/uploads/flyers')
+        os.path.join(app.root_path, 'instance/uploads/flyers')
     )
 )
 
@@ -39,14 +37,13 @@ admin.add_view(
     MerchModelView(
         Merch,
         db.session,
-        os.path.join(app.root_path, 'static/uploads/merch')
+        os.path.join(app.root_path, 'instance/uploads/merch')
     )
 )
 
 register_routes(app)
 
-if __name__=='__main__':
-    app.run(debug=True, use_reloader=False, host='10.0.0.151')
-
-
 # for mobile viewing, pass host='10.0.0.151' to app.run()
+if __name__=='__main__':
+    app.run(debug=True, use_reloader=False)
+
