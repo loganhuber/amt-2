@@ -35,7 +35,7 @@
                 <div class="info flex-row">
                     <p>{{ show.description }}</p>
                     <p class="show-row-date" >{{ show.date.strftime("%B %d, %Y") }}</p>
-                    <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('static', filename='uploads/flyers/' ~show.img_filename) }}" data-city="{{ show.city }}" class="info-btn button-16" onclick="document.getElementById('more-info').showModal()">INFO</button>
+                    <button data-venue="{{ show.venue }}" data-link="{{ show.ticket_link }}" data-description="{{ show.description }}" data-image="{{ url_for('uploaded_file', filename='flyers/' ~show.img_filename) }}" data-city="{{ show.city }}" class="info-btn button-16" onclick="document.getElementById('more-info').showModal()">INFO</button>
                 </div>
             </div>
         {% endfor %}
