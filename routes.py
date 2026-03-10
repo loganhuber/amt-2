@@ -33,7 +33,7 @@ def register_routes(app):
         now = datetime.now()
 
         upcoming = Shows.query.filter(Shows.date >= now).order_by(Shows.date.asc()).all()
-        past = Shows.query.filter(Shows.date < now).order_by(Shows.date.asc()).all()
+        past = Shows.query.filter(Shows.date < now).order_by(Shows.date.desc()).all()
         
         return render_template('public/shows.html', upcoming=upcoming, past=past)
     
