@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.querySelector('.loader-overlay')
+    const content = document.querySelector('.content')
+    loader.style.display = 'none'
+    content.classList.remove('hidden')
+    content.classList.add('flex-column')
+
+
+
     document.addEventListener('click', toggleMenu)
     document.addEventListener('click', toggleTabs)
 })
