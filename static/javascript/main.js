@@ -1,12 +1,8 @@
+displayLoadMsg()
+
 document.addEventListener('DOMContentLoaded', () => {
-    const loader = document.querySelector('.loader-overlay')
-    const content = document.querySelector('.content')
-    loader.style.display = 'none'
-    content.classList.remove('hidden')
-    content.classList.add('flex-column')
-
-
-
+    setTimeout(handleLoader, 2000)
+    
     document.addEventListener('click', toggleMenu)
     document.addEventListener('click', toggleTabs)
 })
@@ -50,4 +46,22 @@ function toggleTabs(e) {
     const selectedContent = document.querySelector(id)
     selectedContent.classList.remove('hidden')
 
+}
+
+
+
+function displayLoadMsg() {
+    const msgs = ['loading...', "I'm working on it...", "Dude, just wait a sec..", "gimme a sec pls..."]
+    const index = Math.floor(Math.random() * msgs.length)
+    const el = document.getElementById('loader-msg')
+    el.textContent = msgs[index]
+}
+
+
+function handleLoader() {
+    const loader = document.querySelector('.loader-overlay')
+    const content = document.querySelector('.content')
+    loader.style.display = 'none'
+    content.classList.remove('hidden')
+    content.classList.add('flex-column')
 }
