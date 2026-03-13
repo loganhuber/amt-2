@@ -99,7 +99,7 @@ body {
     
 }
 .content {
-    /* margin-top: 3rem; */
+    
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -561,7 +561,6 @@ footer {
         width: 100%;
         padding: 0;
         margin: 0;
-
 
         img {
             height: auto;
