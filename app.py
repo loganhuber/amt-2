@@ -45,5 +45,5 @@ register_routes(app)
 
 # for mobile viewing, pass host='10.0.0.151' to app.run()
 if __name__=='__main__':
-    app.run()
+    app.run(debug=True)
 
