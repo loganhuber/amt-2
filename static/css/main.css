@@ -3,52 +3,106 @@
 
 :root {
     color: white;
-    margin: 2rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: left;
+    /* background-color: black; */
+    /* margin: 0 auto; */
     
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 
+
 body {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    
+    background: black; */
     &.home {
-        background: url('../assets/backgrounds/indexbackground.jpeg') no-repeat center center fixed;
+        background: url('../assets/backgrounds/indexbackground.WebP') no-repeat center center fixed;
+        background-size: cover;
+    }
+    &.home.loaded {
+        background: url('../assets/backgrounds-small/indexbackground_small.WebP') no-repeat center center fixed;
+        background-size: cover;
+        background: url('../assets/backgrounds/indexbackground.WebP') no-repeat center center fixed;
         background-size: cover;
     }
     &.shows {
-        background: url('../assets/backgrounds/showsbackground.jpeg') no-repeat center center fixed;
+        background: url('../assets/backgrounds/showsbackground.WebP') no-repeat center center fixed;
         background-size: cover;
+    }
+    &.shows.loaded {
+    background: url('../assets/backgrounds-small/showsbackground_small.WebP') no-repeat center center fixed;
+    background-size: cover;
+    background: url('../assets/backgrounds/showsbackground.WebP') no-repeat center center fixed;
+    background-size: cover;
     }
     &.contact {
-        background: url('../assets/backgrounds/contactbackground.jpeg') no-repeat center center fixed;
+        background: url('../assets/backgrounds/contactbackground.WebP') no-repeat center center fixed;
         background-size: cover;
     }
+    &.contact.loaded {
+    background: url('../assets/backgrounds-small/contactbackground_small.WebP') no-repeat center center fixed;
+    background-size: cover;
+    background: url('../assets/backgrounds/contactbackground.WebP') no-repeat center center fixed;
+    background-size: cover;
+    }
     &.music {
-    background: url('../assets/backgrounds/musicbackground.jpeg') no-repeat center center fixed;
+    background: url('../assets/backgrounds/musicbackground.WebP') no-repeat center center fixed;
+    background-size: cover;
+    }
+    &.music.loaded {
+    background: url('../assets/backgrounds-small/musicbackground_small.WebP') no-repeat center center fixed;
+    background-size: cover;
+    background: url('../assets/backgrounds/musicbackground.WebP') no-repeat center center fixed;
     background-size: cover;
     }
     &.lessons {
-    background: url('../assets/backgrounds/lessonsbackground.jpeg') no-repeat center center fixed;
+    background: url('../assets/backgrounds/lessonsbackground.WebP') no-repeat center center fixed;
+    background-size: cover;
+    }
+    &.lessons.loaded {
+    background: url('../assets/backgrounds-small/lessonsbackground_small.WebP') no-repeat center center fixed;
+    background-size: cover;
+    background: url('../assets/backgrounds/lessonsbackground.WebP') no-repeat center center fixed;
     background-size: cover;
     }
     &.video {
-    background: url('../assets/backgrounds/videobackground.jpeg') no-repeat center center fixed;
+    background: url('../assets/backgrounds/videobackground.WebP') no-repeat center center fixed;
+    background-size: cover;
+    }
+    &.video.loaded {
+    background: url('../assets/backgrounds-small/videobackground_small.WebP') no-repeat center center fixed;
+    background-size: cover;
+    background: url('../assets/backgrounds/videobackground.WebP') no-repeat center center fixed;
     background-size: cover;
     }
     &.merch {
-    background: url('../assets/backgrounds/merchbackground.jpeg') no-repeat center center fixed;
+    background: url('../assets/backgrounds/merchbackground.WebP') no-repeat center center fixed;
+    background-size: cover;
+    }
+    &.merch.loaded {
+    background: url('../assets/backgrounds-small/merchbackground_small.WebP') no-repeat center center fixed;
+    background-size: cover;
+    background: url('../assets/backgrounds/merchbackground.WebP') no-repeat center center fixed;
     background-size: cover;
     }
     
 }
 .content {
-    margin-top: 3rem;
-    padding: 2rem;
-    width: 80%;
+    /* margin-top: 3rem; */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
     /* background-image: linear-gradient(to bottom right, rgba(84, 14, 14, 0.553), rgba(0, 0, 0, 0.46)); */
     background: rgba(22, 15, 15, 0.53);
     border-radius: 0px;
@@ -148,11 +202,11 @@ dialog::backdrop {
 footer {
     background-color: black;
     height: 90vh;
-    width: 100vw;
+    width: 100%;
     margin-bottom: -5rem;
     padding: 1rem;
     img {
-        width: 30vw;
+        height: 50%;
     }
 
 
@@ -170,7 +224,7 @@ footer {
     }
 
     p {
-        width: 100%;
+        width: 80%;
         text-align: center;
     }
     
@@ -339,7 +393,7 @@ footer {
 
 .alert {
     background-color: black;
-    width: 100vw;
+    width: 100%;
     margin-top: -2rem;
     p { 
         
@@ -447,7 +501,7 @@ footer {
     
     .content {
         margin-top: 6rem;
-        width: 98%;
+        width: 100%;
     }
 
     p { 
@@ -504,9 +558,14 @@ footer {
     }
 
     footer {
+        width: 100%;
         padding: 0;
+        margin: 0;
+
+
         img {
-            width: 60vw;
+            height: auto;
+            width: 65%;
         }
         li {
             margin: .7rem;
@@ -624,17 +683,15 @@ footer {
     }
 
 
-    .footer {
-        height: 80vh;
-    }
+
 
 }
 
 @media (max-width: 1000px) {
 
-    :root {
+    /* :root {
         margin: .5rem;
-    }
+    } */
     body.lessons {
         background: none;
         background-color: black;

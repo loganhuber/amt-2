@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Official website for the Chicago Prog Punk band A Mammoth Task.">
+    <!-- block head is used for 'preload' img message in link tag -->
+    {% block head %}
+    {% endblock %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% block title %}
@@ -40,7 +43,7 @@
             </ul>
         </nav>
 
-        <img class="logo" src="{{ url_for('static', filename='assets/amt_logo.png') }}">
+        <img load="lazy" class="logo" src="{{ url_for('static', filename='assets/amt_logo_small.WebP') }}">
 
     <nav class="navbar">
         <ul class="nav-links flex-row link-icons">
@@ -66,7 +69,7 @@
             <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp link-hover"></a></li>
         </ul>
     </nav>
-    <img class="" src="{{ url_for('static', filename='assets/joy_stencil.png') }}" alt="amt-logo">
+    <img load="lazy" class="" src="{{ url_for('static', filename='assets/joy_stencil.png') }}" alt="amt-logo">
     <p>amammothtaskmusic@gmail.com</p>
     <p>Site designed by Logan Huber</p>
 </footer> 

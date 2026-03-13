@@ -1,8 +1,9 @@
 header {
     justify-content: center;
+    margin: 0 auto;
     margin-top: 0;
     padding-top: 0;
-    width: 100vw;
+    width: 90vw;
     /* background-color: black; */
     & > * {
         flex: 1;
@@ -29,7 +30,7 @@ header {
 }
 
 .logo {
-    max-width: 20vw;
+    max-height: 40vh;
     object-fit:contain;
     aspect-ratio: 1/1;
 }

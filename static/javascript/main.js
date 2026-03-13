@@ -1,5 +1,8 @@
+window.onload = () => {
+    loadImgs()
+}
 document.addEventListener('DOMContentLoaded', () => {
-    // handleLoader()
+
     document.addEventListener('click', toggleMenu)
     document.addEventListener('click', toggleTabs)
 })
@@ -53,3 +56,15 @@ function toggleTabs(e) {
 //     content.classList.remove('hidden')
 //     content.classList.add('flex-column')
 // }
+
+function loadImgs() {
+    const body = document.querySelector('body')
+    body.classList.add('loaded')
+}
+
+
+[...document.querySelectorAll("*")].forEach(el => {
+  if (el.scrollWidth > document.documentElement.clientWidth) {
+    console.log(el);
+  }
+});

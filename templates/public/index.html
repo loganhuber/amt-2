@@ -4,6 +4,9 @@
 <title>A Mammoth Task</title>
 {% endblock %}
 
+{% block head %}
+     <link rel="preload" as="image" href="{{ url_for('static', filename='assets/backgrounds/indexbackground.WebP')}}">
+{% endblock %}
 
 {% block body %}
 <body class="home">
@@ -41,7 +44,7 @@
                 <h1>Tasteless</h1>
                 <div style="justify-self: center;" class="flex-row album-announcement">
                     <div>
-                        <img src="{{ url_for('static', filename='assets/album-covers/tastelesscover.png') }}" alt="Taseteless album cover">
+                        <img load="lazy" src="{{ url_for('static', filename='assets/album-covers/tastelesscover.png') }}" alt="Taseteless album cover">
                     </div>
                     <div class="flex-column">
                         <p>
@@ -115,7 +118,7 @@
         <section>
             <h2 style="text-align: center;">Meet the Band</h2>
             <div class="flex-row bio-row">
-                <img src="{{ url_for('static', filename='assets/bios/chris.jpeg' )}}" alt="">
+                <img load="lazy" src="{{ url_for('static', filename='assets/bios/chris.jpeg' )}}" alt="">
                 <div>
                     <h4>Chris Fleming</h4>
                     <p>Bass/Vocals</p>
@@ -123,7 +126,7 @@
                 <p>As a young boy, Chris cut his teeth running sound for his dad's cover band of fisherman, Hookset. He's been in AMT since the very beginning and begrudgingly took on the task of learning how to sing. Outside of the band, he is a hoarder of masks, p-basses, and zoological artifacts of questionable legality. </p>
             </div>
             <div class="flex-row bio-row">
-                <img src="{{ url_for('static', filename='assets/bios/john.jpeg' )}}" alt="">
+                <img load="lazy" src="{{ url_for('static', filename='assets/bios/john.jpeg' )}}" alt="">
                 <div>
                     <h4>John Fitzgerald</h4>
                     <p>Drums</p>
@@ -131,7 +134,7 @@
                 <p>John spent his formative years pretending to be The Rev behind an electric kit. Chicago scenesters may know John as the drummer in Home Entertainment (RIP). He joined AMT in 2018 and has produced all of our albums since. If you're in the market for an audio engineer, look no further than J-Fitz Audio.</p>
             </div>
             <div class="flex-row bio-row">
-                <img src="{{ url_for('static', filename='assets/bios/logan.jpeg' )}}" alt="">
+                <img load="lazy" src="{{ url_for('static', filename='assets/bios/logan.jpeg' )}}" alt="">
                 <div>
                     <h4>Logan Huber</h4>
                     <p>Guitar</p>
