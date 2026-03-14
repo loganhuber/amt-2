@@ -14,17 +14,19 @@
     {% endblock %}
 </head>
 
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
+<body class="{% block body_class %}{% endblock %}">
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
     {% for category, message in messages %}
     {% if message == 'logged_in' %}
-      <div class="alert alert-{{ category }}">
+    <div class="alert alert-{{ category }}">
         <p>You are logged in. <a class="link-hover" href="{{ url_for('admin.index') }}">Visit Admin Portal</a></p>
-      </div>
-      {% endif %}
+    </div>
+    {% endif %}
     {% endfor %}
-  {% endif %}
-{% endwith %}
+    {% endif %}
+    {% endwith %}
     <header class="flex-row">   
         <nav class="navbar">
             <ul class="nav-links flex-row">
@@ -40,39 +42,40 @@
                         <a class="link-hover" href="{{ url_for('lessons') }}">Guitar Lessons</a>
                     </div>
                 </li>
-
+                
             </ul>
         </nav>
-
+        
         <img load="lazy" class="logo" src="{{ url_for('static', filename='assets/amt_logo_small.WebP') }}">
-
-    <nav class="navbar">
-        <ul class="nav-links flex-row link-icons">
-            <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram link-hover"></a></li>
-            <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube link-hover"></a></li>
-            <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify link-hover"></a></li>
-            <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp link-hover"></a></li>
-        </ul>
-    </nav>
-
-</header>
+        
+        <nav class="navbar">
+            <ul class="nav-links flex-row link-icons">
+                <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram link-hover"></a></li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube link-hover"></a></li>
+                <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify link-hover"></a></li>
+                <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp link-hover"></a></li>
+            </ul>
+        </nav>
+        
+    </header>
 
     {% block body %}
+    
     {% endblock %}
     
-
-<footer class="flex-column">
-    <nav class="socials">
-        <ul class="social-links">
-            <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram link-hover"></a></li>
-            <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube link-hover"></a></li>
-            <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify link-hover"></a></li>
-            <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp link-hover"></a></li>
-        </ul>
-    </nav>
-    <img load="lazy" class="" src="{{ url_for('static', filename='assets/joy_stencil.png') }}" alt="amt-logo">
-    <p>amammothtaskmusic@gmail.com</p>
-    <p>Site designed by Logan Huber</p>
-</footer> 
+    <footer class="flex-column">
+        <nav class="socials">
+            <ul class="social-links">
+                <li><a target="_blank" href="https://www.instagram.com/amammothtask/?hl=en" class="fa fa-instagram link-hover"></a></li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=4blUaGkWw0M&ab_channel=DZRecords" class="fa fa-youtube link-hover"></a></li>
+                <li><a target="_blank" href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB?si=xHL-ZllCR9-75PGSwBpRmg" class="fa fa-spotify link-hover"></a></li>
+                <li><a target="_blank" href="https://amammothtaskofficial.bandcamp.com/track/on-the-fly" class="fa fa-bandcamp link-hover"></a></li>
+            </ul>
+        </nav>
+        <img load="lazy" class="" src="{{ url_for('static', filename='assets/joy_stencil.png') }}" alt="amt-logo">
+        <p>amammothtaskmusic@gmail.com</p>
+        <p>Site designed by Logan Huber</p>
+    </footer> 
+</body>
 <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
 </html>

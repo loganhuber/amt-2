@@ -1,8 +1,14 @@
 {% extends 'public/base.html' %}
 
-{% block body %}
+{% block title %}
+<title>Lessons</title>
+{% endblock %}
 
-<body class="lessons">
+{% block body_class %}
+lessons
+{% endblock %}
+
+{% block body %}
     <main class="content flex-column">
         <section class="width-auto">
             <article class="flex-column">
@@ -57,5 +63,4 @@
         </section>
     </main>
 
-</body>
 {% endblock %}

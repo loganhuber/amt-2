@@ -4,10 +4,10 @@
 <title>Music</title>
 {% endblock %}
 
-
+{% block body_class %}
+music
+{% endblock %}
 {% block body %}
-
-<body class="music">
     <main class="content flex-column">
         <img src="{{ url_for('static', filename='assets/gifs/cd.gif') }}" alt="stupid cd gif">
         <h1>Discography </h1>
@@ -120,5 +120,5 @@
         <p><a class="link-hover" target="_blank" href="https://amammothtaskofficial.bandcamp.com/album/tasteless">Listen on Bandcamp</a></p>
         <p><a href="https://open.spotify.com/artist/0PxamJCparlY9A6VeL3aZB" target="_blank" class="link-hover">Listen on Spotify</a></p>
     </main>
-</body>
+
 {% endblock %}

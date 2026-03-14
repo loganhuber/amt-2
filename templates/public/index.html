@@ -8,9 +8,9 @@
      <link rel="preload" as="image" href="{{ url_for('static', filename='assets/backgrounds/indexbackground.WebP')}}">
 {% endblock %}
 
-{% block body %}
-<body class="home">
+{% block body_class %}home{% endblock %}
 
+{% block body %}
 
     <main class="content flex-column" id="content" > 
             
@@ -142,8 +142,6 @@
                 <p>Logan spent his entire childhood ripping off System of a Down and trying to skateboard. Skateboarding didn't stick, so his only option was to get pretty okay at the guitar. You may also know him from Vaguewaves (RIP), The Kreutzer Sonata (RIP), and Gen-X Joplin. </p>
             </div>
         </section>
-
-
         
     </main>
 {% endblock %}

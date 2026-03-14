@@ -4,10 +4,10 @@
 <title>Shows</title>
 {% endblock %}
 
-
+{% block body_class %}
+shows
+{% endblock %}
 {% block body %}
-
-<body class="shows">
     <dialog class="flex-column" id="more-info">
         <h3>More Info</h3>
         <img id="show-flyer" style="height: 40vh;" src="" alt="Flyer">
@@ -52,8 +52,6 @@
             </div>
             {% endfor %}
         </main>
-
-    </body>
     <script src="{{ url_for('static', filename='javascript/shows.js') }}"></script>
 
 {% endblock %}

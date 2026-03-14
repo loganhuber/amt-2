@@ -1,9 +1,14 @@
 {% extends 'public/base.html' %}
 
-{% block body %}
+{% block title %}
+<title>Video</title>
+{% endblock %}
 
-<body class="video">
-    
+{% block body_class %}
+video
+{% endblock %}
+
+{% block body %}
     <main class="content flex-column">
         <div style="padding: 2rem; gap: 1rem;" class="flex-row">
             <h1>Video</h1>
@@ -65,8 +70,5 @@
         </div>
 
     </main>
-
-
-</body>
 
 {% endblock %}
