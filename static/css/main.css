@@ -63,7 +63,7 @@ body {
         position: fixed;
         inset: 0;
 
-        background: url('../assets/backgrounds/showsbackground.webp')
+        background: url('../assets/backgrounds/showsbackground.WebP')
             no-repeat center center fixed;
         background-size: cover;
 
@@ -89,7 +89,7 @@ body {
         position: fixed;
         inset: 0;
 
-        background: url('../assets/backgrounds/contactbackground.webp')
+        background: url('../assets/backgrounds/contactbackground.WebP')
             no-repeat center center fixed;
         background-size: cover;
 
@@ -115,7 +115,7 @@ body {
         position: fixed;
         inset: 0;
 
-        background: url('../assets/backgrounds/musicbackground.webp')
+        background: url('../assets/backgrounds/musicbackground.WebP')
             no-repeat center center fixed;
         background-size: cover;
 
@@ -141,7 +141,7 @@ body {
         position: fixed;
         inset: 0;
 
-        background: url('../assets/backgrounds/lessonsbackground.webp')
+        background: url('../assets/backgrounds/lessonsbackground.WebP')
             no-repeat center center fixed;
         background-size: cover;
 
@@ -167,7 +167,7 @@ body {
         position: fixed;
         inset: 0;
 
-        background: url('../assets/backgrounds/videobackground.webp')
+        background: url('../assets/backgrounds/videobackground.WebP')
             no-repeat center center fixed;
         background-size: cover;
 
@@ -193,7 +193,7 @@ body {
         position: fixed;
         inset: 0;
 
-        background: url('../assets/backgrounds/merchbackground.webp')
+        background: url('../assets/backgrounds/merchbackground.WebP')
             no-repeat center center fixed;
         background-size: cover;
 
