@@ -22,82 +22,197 @@ html {
 
 
 body {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: black; */
+
+    /* BACKGROUND IMAGES */
+    
     &.home {
-        background: url('../assets/backgrounds/indexbackground.WebP') no-repeat center center fixed;
-        background-size: cover;
+    background: url('../assets/backgrounds-small/indexbackground_small.jpg')
+        no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
     }
-    &.home.loaded {
-        background: url('../assets/backgrounds-small/indexbackground_small.WebP') no-repeat center center fixed;
+
+    &.home::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('../assets/backgrounds/indexbackground.WebP')
+            no-repeat center center fixed;
         background-size: cover;
-        background: url('../assets/backgrounds/indexbackground.WebP') no-repeat center center fixed;
-        background-size: cover;
+
+        opacity: 0;
+        transition: opacity .5s ease;
+
+        z-index: -1;
     }
+
+    &.home.loaded::before {
+        opacity: 1;
+    }
+
     &.shows {
-        background: url('../assets/backgrounds/showsbackground.WebP') no-repeat center center fixed;
+    background: url('../assets/backgrounds-small/showsbackground_small.jpg')
+        no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    }
+
+    &.shows::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('../assets/backgrounds/showsbackground.webp')
+            no-repeat center center fixed;
         background-size: cover;
+
+        opacity: 0;
+        transition: opacity .5s ease;
+
+        z-index: -1;
     }
-    &.shows.loaded {
-    background: url('../assets/backgrounds-small/showsbackground_small.WebP') no-repeat center center fixed;
-    background-size: cover;
-    background: url('../assets/backgrounds/showsbackground.WebP') no-repeat center center fixed;
-    background-size: cover;
+
+    &.shows.loaded::before {
+        opacity: 1;
     }
+
     &.contact {
-        background: url('../assets/backgrounds/contactbackground.WebP') no-repeat center center fixed;
+    background: url('../assets/backgrounds-small/contactbackground_small.jpg')
+        no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    }
+
+    &.contact::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('../assets/backgrounds/contactbackground.webp')
+            no-repeat center center fixed;
         background-size: cover;
+
+        opacity: 0;
+        transition: opacity .5s ease;
+
+        z-index: -1;
     }
-    &.contact.loaded {
-    background: url('../assets/backgrounds-small/contactbackground_small.WebP') no-repeat center center fixed;
-    background-size: cover;
-    background: url('../assets/backgrounds/contactbackground.WebP') no-repeat center center fixed;
-    background-size: cover;
+
+    &.contact.loaded::before {
+        opacity: 1;
     }
+
     &.music {
-    background: url('../assets/backgrounds/musicbackground.WebP') no-repeat center center fixed;
+    background: url('../assets/backgrounds-small/musicbackground_small.jpg')
+        no-repeat center center fixed;
     background-size: cover;
+    position: relative;
     }
-    &.music.loaded {
-    background: url('../assets/backgrounds-small/musicbackground_small.WebP') no-repeat center center fixed;
-    background-size: cover;
-    background: url('../assets/backgrounds/musicbackground.WebP') no-repeat center center fixed;
-    background-size: cover;
+
+    &.music::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('../assets/backgrounds/musicbackground.webp')
+            no-repeat center center fixed;
+        background-size: cover;
+
+        opacity: 0;
+        transition: opacity .5s ease;
+
+        z-index: -1;
     }
+
+    &.music.loaded::before {
+        opacity: 1;
+    }
+
     &.lessons {
-    background: url('../assets/backgrounds/lessonsbackground.WebP') no-repeat center center fixed;
+    background: url('../assets/backgrounds-small/lessonsbackground_small.jpg')
+        no-repeat center center fixed;
     background-size: cover;
+    position: relative;
     }
-    &.lessons.loaded {
-    background: url('../assets/backgrounds-small/lessonsbackground_small.WebP') no-repeat center center fixed;
-    background-size: cover;
-    background: url('../assets/backgrounds/lessonsbackground.WebP') no-repeat center center fixed;
-    background-size: cover;
+
+    &.lessons::before {
+    content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('../assets/backgrounds/lessonsbackground.webp')
+            no-repeat center center fixed;
+        background-size: cover;
+
+        opacity: 0;
+        transition: opacity .5s ease;
+
+        z-index: -1;
     }
+
+    &.lessons.loaded::before {
+        opacity: 1;
+    }
+
     &.video {
-    background: url('../assets/backgrounds/videobackground.WebP') no-repeat center center fixed;
+    background: url('../assets/backgrounds-small/videobackground_small.jpg')
+        no-repeat center center fixed;
     background-size: cover;
+    position: relative;
     }
-    &.video.loaded {
-    background: url('../assets/backgrounds-small/videobackground_small.WebP') no-repeat center center fixed;
-    background-size: cover;
-    background: url('../assets/backgrounds/videobackground.WebP') no-repeat center center fixed;
-    background-size: cover;
+
+    &.video::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('../assets/backgrounds/videobackground.webp')
+            no-repeat center center fixed;
+        background-size: cover;
+
+        opacity: 0;
+        transition: opacity .5s ease;
+
+        z-index: -1;
     }
+
+    &.video.loaded::before {
+        opacity: 1;
+    }
+
     &.merch {
-    background: url('../assets/backgrounds/merchbackground.WebP') no-repeat center center fixed;
+    background: url('../assets/backgrounds-small/merchbackground_small.jpg')
+        no-repeat center center fixed;
     background-size: cover;
+    position: relative;
     }
-    &.merch.loaded {
-    background: url('../assets/backgrounds-small/merchbackground_small.WebP') no-repeat center center fixed;
-    background-size: cover;
-    background: url('../assets/backgrounds/merchbackground.WebP') no-repeat center center fixed;
-    background-size: cover;
+
+    &.merch::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('../assets/backgrounds/merchbackground.webp')
+            no-repeat center center fixed;
+        background-size: cover;
+
+        opacity: 0;
+        transition: opacity .5s ease;
+
+        z-index: -1;
     }
+
+    &.merch.loaded::before {
+        opacity: 1;
+    }
+
+    /* END BACKGROUND IMAGES */
     
 }
+
+
+
 .content {
     
     max-width: 1100px;
