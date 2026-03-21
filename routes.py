@@ -4,7 +4,7 @@ from flask_login import login_user, logout_user, current_user
 from werkzeug.security import check_password_hash
 from models import Shows, Merch, Admins
 from datetime import datetime
-from email_utils import build_email, send_email, EmailSendError
+# from email_utils import build_email, send_email, EmailSendError
 import os
 
 
@@ -37,22 +37,25 @@ def register_routes(app):
         
         return render_template('public/shows.html', upcoming=upcoming, past=past)
     
-    @app.route('/contact', methods=["GET", "POST"])
+    @app.route('/contact')
     def contact():
 
-        if request.method == 'POST':
-            name = request.form.get('name')
-            email = request.form.get('email')
-            message = request.form.get('message')
+        # KEPT FOR FUTURE REFERENCE IF NEEDED
+        # WILL NOT WORK AS THE SERVER IS FIGHTING SMTP REQUESTS
+        
+        # if request.method == 'POST':
+        #     name = request.form.get('name')
+        #     email = request.form.get('email')
+        #     message = request.form.get('message')
 
-            try:
-                msg = build_email(email, name, message)
-                send_email(msg)
-                flash('Message received, we will reach out shortly!', 'success')
-            except EmailSendError:
-                flash("There was an error sending your message.")
+        #     try:
+        #         msg = build_email(email, name, message)
+        #         send_email(msg)
+        #         flash('Message received, we will reach out shortly!', 'success')
+        #     except EmailSendError:
+        #         flash("There was an error sending your message.")
 
-            return redirect(url_for('index'))
+        #     return redirect(url_for('index'))
             
         return render_template('public/contact.html')
     
