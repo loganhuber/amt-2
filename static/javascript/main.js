@@ -1,8 +1,8 @@
 window.onload = () => {
+    checkForSubmits()
     loadImgs()
 }
 document.addEventListener('DOMContentLoaded', () => {
-
     document.addEventListener('click', toggleMenu)
     document.addEventListener('click', toggleTabs)
 })
@@ -62,9 +62,30 @@ function loadImgs() {
     body.classList.add('loaded')
 }
 
+function checkForSubmits() {
+const params = new URLSearchParams(window.location.search);
+if (params.get("submitted") === "true") {
+  showThanxMsg()
+}
+}
 
-[...document.querySelectorAll("*")].forEach(el => {
-  if (el.scrollWidth > document.documentElement.clientWidth) {
-    console.log(el);
-  }
-});
+function showThanxMsg() {
+    console.log("Hi mom")
+    const form = document.querySelector('.contact-container')
+    const msg = document.querySelector('.thanx-msg')
+
+    form.classList.remove('flex-column')
+    form.classList.add("hidden")
+    msg.classList.add('flex-column')
+    msg.classList.remove('hidden')
+}
+
+
+
+
+// Logs elements that are too wide. 
+// [...document.querySelectorAll("*")].forEach(el => {
+//   if (el.scrollWidth > document.documentElement.clientWidth) {
+//     console.log(el);
+//   }
+// });

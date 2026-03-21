@@ -13,17 +13,26 @@ contact
 
     <main class="content flex-column">
         
-        <h1>Contact</h1>
-        <p>To contact us for booking, fill out the form bellow. Alternatively, reach out to Logan at amammothtaskmusic [at] gmail [dot] com. Both do the same thing.</p>
-        <form class="flex-column contact-form" method="POST", action="https://formsubmit.co/amammothtaskmusic@gmail.com">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="15"></textarea>
-            <button class="button-16" type="submit">Send Message</button>
-        </form>
+        <section class="flex-column contact-container">
+            <h1>Contact</h1>
+            <p>To contact us for booking, fill out the form bellow. Alternatively, reach out to Logan at amammothtaskmusic [at] gmail [dot] com. Both do the same thing.</p>
+            <form class="flex-column contact-form" method="POST", action="https://formsubmit.co/amammothtaskmusic@gmail.com">
+                <input type="hidden" name="_next" value="https://amammothtask.com/contact?submitted=true">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="15"></textarea>
+                <button class="button-16" type="submit">Send Message</button>
+            </form>
+        </section>
+        <div class="hidden thanx-msg">
+            <div class="black-box">
+                <h2>Got your email. We'll get back shortly.</h2>
+                <p class="link-hover underline"><a href="{{ url_for('index') }}">Go home</a></p>
+            </div>
+        </div>
     </main>
 
 {% endblock %}
