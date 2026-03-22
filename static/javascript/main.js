@@ -1,5 +1,4 @@
 window.onload = () => {
-    checkForSubmits()
     loadImgs()
 }
 document.addEventListener('DOMContentLoaded', () => {
@@ -62,23 +61,6 @@ function loadImgs() {
     body.classList.add('loaded')
 }
 
-function checkForSubmits() {
-const params = new URLSearchParams(window.location.search);
-if (params.get("submitted") === "true") {
-  showThanxMsg()
-}
-}
-
-function showThanxMsg() {
-    console.log("Hi mom")
-    const form = document.querySelector('.contact-container')
-    const msg = document.querySelector('.thanx-msg')
-
-    form.classList.remove('flex-column')
-    form.classList.add("hidden")
-    msg.classList.add('flex-column')
-    msg.classList.remove('hidden')
-}
 
 
 
