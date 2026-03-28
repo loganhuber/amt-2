@@ -30,16 +30,16 @@
     <header class="flex-row">   
         <nav class="navbar">
             <ul class="nav-links flex-row">
-                <li><a class="link-hover" href="{{ url_for('index') }}">Home</a></li>
-                <li><a class="link-hover" href="{{ url_for('music') }}">Music</a></li>
-                <li><a class="link-hover" href="{{ url_for('shows') }}">Shows</a></li>
-                <li><a class="link-hover" href="{{ url_for('merch') }}">Merch</a></li>
+                <li><a class="link-hover {% if request.endpoint == 'index' %}underline{% endif %}" href="{{ url_for('index') }}">Home</a></li>
+                <li><a class="link-hover {% if request.endpoint == 'music' %}underline{% endif %}" href="{{ url_for('music') }}">Music</a></li>
+                <li><a class="link-hover {% if request.endpoint == 'shows' %}underline{% endif %}" href="{{ url_for('shows') }}">Shows</a></li>
+                <li><a class="link-hover {% if request.endpoint == 'merch' %}underline{% endif %}" href="{{ url_for('merch') }}">Merch</a></li>
                 <li>
                     <button class="link-hover unstyle-button dropdown-btn">More</button>
                     <div class="dropdown hidden flex-column " style="background-color: black;">
-                        <a class="link-hover" href="{{ url_for('contact')}}">Contact</a>
-                        <a class="link-hover" href="{{ url_for('video') }}" >Video</a>
-                        <a class="link-hover" href="{{ url_for('lessons') }}">Guitar Lessons</a>
+                        <a class="link-hover {% if request.endpoint == 'contact' %}underline{% endif %}" href="{{ url_for('contact')}}">Contact</a>
+                        <a class="link-hover {% if request.endpoint == 'video' %}underline{% endif %}" href="{{ url_for('video') }}" >Video</a>
+                        <a class="link-hover {% if request.endpoint == 'lessons' %}underline{% endif %}" href="{{ url_for('lessons') }}">Guitar Lessons</a>
                     </div>
                 </li>
                 

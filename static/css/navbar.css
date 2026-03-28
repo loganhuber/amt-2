@@ -27,7 +27,9 @@ header {
         color: white;
     }
 
-
+    a.underline {
+        text-decoration: underline;
+    }
 }
 
 .logo {
