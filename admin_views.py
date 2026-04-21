@@ -47,6 +47,9 @@ class AdminModelView(SecureModelView):
 
 
 class ShowsModelView(SecureModelView):
+
+    extra_js = ['/static/javascript/compressImg.js']
+
     def __init__(self, model, session, upload_path):
         self.upload_path = upload_path
 

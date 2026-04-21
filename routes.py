@@ -21,9 +21,10 @@ def register_routes(app):
 
         display_portal_link()
 
-        # sets time to midnight
+        # # sets time to midnight
         now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
         upcoming = Shows.query.filter(Shows.date >= now).order_by(Shows.date.asc()).all()
+
 
         return render_template('public/index.html', upcoming=upcoming)
     
@@ -31,7 +32,7 @@ def register_routes(app):
     @app.route('/shows')
     def shows():
 
-        now = datetime.now()
+        now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
         upcoming = Shows.query.filter(Shows.date >= now).order_by(Shows.date.asc()).all()
         past = Shows.query.filter(Shows.date < now).order_by(Shows.date.desc()).all()
