@@ -13,6 +13,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -22,7 +24,9 @@ html {
 
 
 body {
-
+    /* box-sizing: border-box;
+    margin: 0;
+    padding: 0; */
     /* BACKGROUND IMAGES */
     
     &.home {
