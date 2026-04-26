@@ -221,7 +221,7 @@ body {
     
     max-width: 1500px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     /* background-image: linear-gradient(to bottom right, rgba(84, 14, 14, 0.553), rgba(0, 0, 0, 0.46)); */
     background: rgba(22, 15, 15, 0.53);
     border-radius: 0px;
@@ -230,6 +230,10 @@ body {
     -webkit-backdrop-filter: blur(11.7px);
     border: 1px solid black;
     margin-bottom: 10rem;
+
+    & > * {
+        margin: 1rem 0;
+    }
 }
 
 p {
@@ -622,6 +626,7 @@ footer {
     
     .content {
         margin-top: 6rem;
+        padding: .5rem .2rem;
         width: 100%;
     }
 
@@ -680,15 +685,15 @@ footer {
 
     footer {
         width: 100%;
-        padding: 0;
+        padding-top: 1rem;
         margin: 0;
 
         img {
             height: auto;
-            width: 65%;
+            width: 80%;
         }
         li {
-            margin: .7rem;
+            margin-top: 1rem;
         }
     }
 
