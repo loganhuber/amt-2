@@ -529,20 +529,27 @@ footer {
 .album-announcement {
     padding: 2rem 1rem;
     gap: 1rem;
+    
     img {
         aspect-ratio: 1/1;
         height: auto;
-        width: 25vw;
+        width: 50%;
     }
     div {
         width: 100%;
-        justify-content: flex-end;
+        align-items: center;
+        /* justify-content: flex-end; */
+
     }
     p {
-        width: 100%;
-        align-self: flex-end;
+        width: 70%;
+        margin: 1rem 0;
+        /* align-self: flex-end; */
     }
 
+    iframe {
+        width: 500px;
+    }
 
 }
 
@@ -747,7 +754,7 @@ footer {
 
 
         img {
-            width: 40vw;
+            width: 70vw;
         }
 
         div {
@@ -755,7 +762,11 @@ footer {
 
             p {
                 justify-self: center;
-                
+                width: 90%;
+            }
+
+            iframe {
+                width: 300px;
             }
         }
     }
